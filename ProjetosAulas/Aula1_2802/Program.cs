@@ -1,15 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Aula1_2802
 {
     class Program
     {
         static void Main(string[] args)
         {
+            string nome = string.Empty;
+
+            Console.Write("Digite seu nome: ");
+            nome = Console.ReadLine();
+            Console.WriteLine("Olá, " + nome + ". Boa Aula!");
+            
+            Console.ReadKey();
         }
     }
 }
