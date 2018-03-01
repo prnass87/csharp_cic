@@ -12,6 +12,7 @@ namespace Aula1_2802
             Console.WriteLine("Olá, " + nome + ". Boa Aula!");
             
             Console.ReadKey();
+            
         }
     }
 }
