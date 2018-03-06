@@ -48,6 +48,7 @@ namespace ConsoleView
                 switch (opcaoDigitada)
                 {
                     case OpcoesMenuPrincipal.CadastrarCliente:
+                        CadastrarCliente();
                         break;
                     case OpcoesMenuPrincipal.PesquisarCliente:
                         break;
@@ -79,15 +80,27 @@ namespace ConsoleView
             cli.Cpf = Console.ReadLine();
 
             //Endereco
+            Endereco end = new Endereco();
             Console.Write("Digite o endereco. Rua: ");
-            cli._Endereco.Rua = Console.ReadLine();
+            end.Rua = Console.ReadLine();
+
             Console.Write("Número: ");
-            cli._Endereco.Numero = int.Parse(Console.ReadLine());
+            end.Numero = int.Parse(Console.ReadLine());
+
             Console.Write("Complemento: ");
-            cli._Endereco.Complemento = Console.ReadLine();
-            Console.WriteLine();
+            end.Complemento = Console.ReadLine();
+
+            cli._Endereco = end;
+
+            Console.WriteLine("Endereco: " + cli._Endereco.Rua + ", " + cli._Endereco.Numero 
+                + " - Compl:"+ cli._Endereco.Complemento);
+
 
             return cli;
+            /*
+             cli._Endereco = new Endereco(); //Instanciar o endereço
+             cli._Endereco.Rua = ...
+            */
         }
 
         private static Cliente PesquisarCliente()
