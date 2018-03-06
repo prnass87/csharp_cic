@@ -49,6 +49,7 @@ namespace ConsoleView
                 {
                     case OpcoesMenuPrincipal.CadastrarCliente:
                         CadastrarCliente();
+                        ExibirDadosCliente();
                         break;
                     case OpcoesMenuPrincipal.PesquisarCliente:
                         break;
@@ -92,10 +93,6 @@ namespace ConsoleView
 
             cli._Endereco = end;
 
-            Console.WriteLine("Endereco: " + cli._Endereco.Rua + ", " + cli._Endereco.Numero 
-                + " - Compl:"+ cli._Endereco.Complemento);
-
-
             return cli;
             /*
              cli._Endereco = new Endereco(); //Instanciar o endereço
@@ -107,6 +104,14 @@ namespace ConsoleView
         {
             //TODO: Fazer depois
             return new Cliente();
+        }
+
+        private static void ExibirDadosCliente(Cliente cliente)
+        {
+            var cli2 = CadastrarCliente();
+            Console.Write("Cliente: " + cli2.Nome);
+            Console.Write("CPF do Cliente: " + cli2.Cpf);
+            Console.WriteLine("Endereco: " + cli2._Endereco.Rua + ", " + cli2._Endereco.Numero + " - Compl:" + cli2._Endereco.Complemento);
         }
     }
 }
