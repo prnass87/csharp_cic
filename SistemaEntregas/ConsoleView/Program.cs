@@ -1,4 +1,5 @@
-﻿using Modelos;
+﻿using Controllers;
+using Modelos;
 using System;
 
 namespace ConsoleView
@@ -52,6 +53,11 @@ namespace ConsoleView
                         Cliente c = CadastrarCliente();
                         //Pega a variavel que possui informações e passa ela como parametro;
                         ExibirDadosCliente(c); //
+
+                        //Instanciar o método pq não é static.
+                        ClienteController cc = new ClienteController();
+                        cc.SalvarCliente(c);
+
                         break;
                     case OpcoesMenuPrincipal.PesquisarCliente:
                         break;
