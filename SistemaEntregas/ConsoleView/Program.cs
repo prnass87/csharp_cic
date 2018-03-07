@@ -48,8 +48,10 @@ namespace ConsoleView
                 switch (opcaoDigitada)
                 {
                     case OpcoesMenuPrincipal.CadastrarCliente:
-                        CadastrarCliente();
-                        //ExibirDadosCliente();
+                        //retorna um cliente na função, armazena em uma variavel "Cliente";
+                        Cliente c = CadastrarCliente();
+                        //Pega a variavel que possui informações e passa ela como parametro;
+                        ExibirDadosCliente(c); //
                         break;
                     case OpcoesMenuPrincipal.PesquisarCliente:
                         break;
@@ -113,7 +115,7 @@ namespace ConsoleView
             Console.WriteLine("Cliente ID: " + cliente.PessoaID);
             Console.Write("Cliente: " + cliente.Nome);
             Console.Write("CPF do Cliente: " + cliente.Cpf);
-
+            
             Console.WriteLine("Dados Cliente - Endereço");
             Console.WriteLine("Rua: " + cliente._Endereco.Rua + ", Num: " + cliente._Endereco.Numero + " - Compl:" + cliente._Endereco.Complemento);
             Console.WriteLine("------------------");
