@@ -49,7 +49,7 @@ namespace ConsoleView
                 {
                     case OpcoesMenuPrincipal.CadastrarCliente:
                         CadastrarCliente();
-                        ExibirDadosCliente();
+                        //ExibirDadosCliente();
                         break;
                     case OpcoesMenuPrincipal.PesquisarCliente:
                         break;
@@ -108,10 +108,16 @@ namespace ConsoleView
 
         private static void ExibirDadosCliente(Cliente cliente)
         {
-            var cli2 = CadastrarCliente();
-            Console.Write("Cliente: " + cli2.Nome);
-            Console.Write("CPF do Cliente: " + cli2.Cpf);
-            Console.WriteLine("Endereco: " + cli2._Endereco.Rua + ", " + cli2._Endereco.Numero + " - Compl:" + cli2._Endereco.Complemento);
+            Console.WriteLine();
+            Console.WriteLine("Dados Cliente");
+            Console.WriteLine("Cliente ID: " + cliente.PessoaID);
+            Console.Write("Cliente: " + cliente.Nome);
+            Console.Write("CPF do Cliente: " + cliente.Cpf);
+
+            Console.WriteLine("Dados Cliente - Endereço");
+            Console.WriteLine("Rua: " + cliente._Endereco.Rua + ", Num: " + cliente._Endereco.Numero + " - Compl:" + cliente._Endereco.Complemento);
+            Console.WriteLine("------------------");
+            Console.WriteLine();
         }
     }
 }
