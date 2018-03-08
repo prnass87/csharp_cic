@@ -5,13 +5,8 @@ namespace Controllers
 {
     public class ClienteController
     {
-        public List<Cliente> MeusClientes { get; set; }
-
-        //Reserva em memória a lista, começa a existir
-        public ClienteController()
-        {
-            MeusClientes = new List<Cliente>();
-        }
+        //Controle de acesso
+        static List<Cliente> MeusClientes = new List<Cliente>();
 
         public void SalvarCliente(Cliente cliente)
         {

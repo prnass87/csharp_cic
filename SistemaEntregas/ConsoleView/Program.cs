@@ -2,6 +2,11 @@
 using Modelos;
 using System;
 
+//F5 - MODO NORMAL (ou até o proximo break point)
+//F9 - BREAK POINT
+//F10 - EXEXUTA PASSO
+//F11 - ENTRA NO PASSO
+
 namespace ConsoleView
 {
     class Program
@@ -90,7 +95,7 @@ namespace ConsoleView
 
             //Endereco
             Endereco end = new Endereco();
-            Console.Write("Digite o endereco. Rua: ");
+            Console.Write("Rua: ");
             end.Rua = Console.ReadLine();
 
             Console.Write("Número: ");
@@ -117,13 +122,13 @@ namespace ConsoleView
         private static void ExibirDadosCliente(Cliente cliente)
         {
             Console.WriteLine();
-            Console.WriteLine("Dados Cliente");
+            Console.WriteLine("--Dados Cliente--");
             Console.WriteLine("Cliente ID: " + cliente.PessoaID);
-            Console.Write("Cliente: " + cliente.Nome);
-            Console.Write("CPF do Cliente: " + cliente.Cpf);
+            Console.WriteLine("Cliente: " + cliente.Nome);
+            Console.WriteLine("CPF do Cliente: " + cliente.Cpf);
             
-            Console.WriteLine("Dados Cliente - Endereço");
-            Console.WriteLine("Rua: " + cliente._Endereco.Rua + ", Num: " + cliente._Endereco.Numero + " - Compl:" + cliente._Endereco.Complemento);
+            Console.WriteLine("--Endereço--");
+            Console.WriteLine("Rua: " + cliente._Endereco.Rua + ", Num: " + cliente._Endereco.Numero + " - Compl: " + cliente._Endereco.Complemento);
             Console.WriteLine("------------------");
             Console.WriteLine();
         }
