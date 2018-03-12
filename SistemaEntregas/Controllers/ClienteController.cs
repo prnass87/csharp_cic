@@ -15,7 +15,7 @@ namespace Controllers
             MeusClientes.Add(cliente);
         }
 
-        public Cliente PesquisarCliente(string nome)
+        public Cliente PesquisarPorNome(string nome)
         {
             var c = from x in MeusClientes
                     where x.Nome.Equals(nome)
