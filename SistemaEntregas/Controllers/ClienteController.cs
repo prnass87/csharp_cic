@@ -17,6 +17,15 @@ namespace Controllers
 
         public Cliente PesquisarPorNome(string nome)
         {
+
+            /*
+             - Trim(): Remoção de espaços
+             - toLower(): letras em minusculo
+             - ToUpper(): letras em maisculo
+             - Equals():
+             - Contains():
+             */
+
             var c = from x in MeusClientes
                     where x.Nome.Equals(nome)
                     select x;

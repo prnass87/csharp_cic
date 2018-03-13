@@ -65,6 +65,7 @@ namespace ConsoleView
 
                         break;
                     case OpcoesMenuPrincipal.PesquisarCliente:
+                        PesquisarCliente();
                         break;
                     case OpcoesMenuPrincipal.EditarCliente:
                         break;
