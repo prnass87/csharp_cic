@@ -1,6 +1,7 @@
 ﻿using Controllers;
 using Modelos;
 using System;
+using System.Collections.Generic;
 
 //F5 - MODO NORMAL (ou até o proximo break point)
 //F9 - BREAK POINT
@@ -82,7 +83,7 @@ namespace ConsoleView
                 }
             } while (opcaoDigitada != OpcoesMenuPrincipal.Sair);
         }
-
+        //Métodos: Cliente
         private static void ExcluirCliente()
         {
             Console.WriteLine("Digite o id do cliente que deseja excluir: ");
@@ -91,8 +92,7 @@ namespace ConsoleView
             ClienteController cc = new ClienteController();
             cc.ExcluirCliente(idCliente);
         }
-
-        //Métodos: Cliente
+                
         private static Cliente CadastrarCliente()
         {
             Cliente cli = new Cliente();
@@ -149,6 +149,22 @@ namespace ConsoleView
             Console.WriteLine("--Endereço--");
             Console.WriteLine("Rua: " + cliente._Endereco.Rua + ", Num: " + cliente._Endereco.Numero + " - Compl: " + cliente._Endereco.Complemento);
             Console.WriteLine("------------------");
+            Console.WriteLine();
+        }
+
+        private static void ListarTodosClientes()
+        {
+            Console.WriteLine();
+            Console.WriteLine(" --- Clientes Cadastrados --- ");
+
+            ClienteController cc = new ClienteController();
+            List<Cliente> lista = cc.ListarClientes();
+
+            foreach (Cliente cli in lista)
+            {
+                ExibirDadosCliente(cli);
+            }
+
             Console.WriteLine();
         }
     }
