@@ -7,6 +7,7 @@ namespace Controllers
     public class ClienteController
     {
         //Controle de acesso
+        //Static, semrpe a mesma instancia. Cadastrados no mesmo lugar, acessar a mesma lista
         static List<Cliente> MeusClientes = new List<Cliente>();
         static int ultimoID = 0;
 

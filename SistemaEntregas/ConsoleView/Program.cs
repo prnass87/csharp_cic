@@ -173,5 +173,8 @@ namespace ConsoleView
 
             Console.WriteLine();
         }
+
+        //Métodos: Cliente
+        //private static E
     }
 }
