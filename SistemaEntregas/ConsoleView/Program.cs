@@ -89,7 +89,9 @@ namespace ConsoleView
                 }
             } while (opcaoDigitada != OpcoesMenuPrincipal.Sair);
         }
+        //_____________________________________________
         //Métodos: Cliente
+        //_____________________________________________
         private static void ExcluirCliente()
         {
             Console.WriteLine("Digite o id do cliente que deseja excluir: ");
@@ -110,24 +112,11 @@ namespace ConsoleView
             Console.Write("Digite o CPF: ");
             cli.Cpf = Console.ReadLine();
 
-            //Endereco
-            Endereco end = new Endereco();
-            Console.Write("Rua: ");
-            end.Rua = Console.ReadLine();
+            Endereco end = CadastrarEndereco();
 
-            Console.Write("Número: ");
-            end.Numero = int.Parse(Console.ReadLine());
-
-            Console.Write("Complemento: ");
-            end.Complemento = Console.ReadLine();
-
-            cli._Endereco = end;
+            cli.EnderecoID = end.EnderecoID;
 
             return cli;
-            /*
-             cli._Endereco = new Endereco(); //Instanciar o endereço
-             cli._Endereco.Rua = ...
-            */
         }
 
         private static void PesquisarCliente()
@@ -151,11 +140,8 @@ namespace ConsoleView
             Console.WriteLine("Cliente ID: " + cliente.PessoaID);
             Console.WriteLine("Cliente: " + cliente.Nome);
             Console.WriteLine("CPF do Cliente: " + cliente.Cpf);
-            
-            Console.WriteLine("--Endereço--");
-            Console.WriteLine("Rua: " + cliente._Endereco.Rua + ", Num: " + cliente._Endereco.Numero + " - Compl: " + cliente._Endereco.Complemento);
-            Console.WriteLine("------------------");
-            Console.WriteLine();
+
+            ExibirDadosDeEndereco(cliente.EnderecoID);
         }
 
         private static void ListarTodosClientes()
@@ -174,7 +160,46 @@ namespace ConsoleView
             Console.WriteLine();
         }
 
-        //Métodos: Cliente
-        //private static E
+        //_____________________________________________
+        //Métodos: Endereco
+        //_____________________________________________
+
+        private static Endereco CadastrarEndereco()
+        {
+            // ... Endereco
+            Endereco end = new Endereco();
+
+            Console.Write("Digite o nome da rua: ");
+            end.Rua = Console.ReadLine();
+
+            Console.WriteLine();
+
+            Console.Write("Digite o numero: ");
+            end.Numero = int.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+
+            Console.Write("Digite o complemento: ");
+            end.Complemento = Console.ReadLine();
+
+            EnderecoController ec = new EnderecoController();
+            ec.SalvarEndereco(end);
+            return end;
+
+        }
+
+        private static void ExibirDadosDeEndereco(int ID)
+        {
+            EnderecoController ec = new EnderecoController();
+            Endereco e = ec.PesquisarPorId(ID);
+
+            Console.WriteLine("- Endereco -");
+            Console.WriteLine("Rua: " + e.Rua);
+            Console.WriteLine("Num: " + e.Numero);
+            Console.WriteLine("Compl.: " + e.Complemento);
+            Console.WriteLine("-------------- ");
+            Console.WriteLine();
+
+        }
     }
 }
