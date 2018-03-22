@@ -64,5 +64,13 @@ namespace Controllers
         {
             return MeusClientes;
         }
+
+        public void EditarCliente(int idClienteEditar, Cliente ClienteEditado)
+        {
+            Cliente ClienteEditar = PesquisarPorID(idClienteEditar);
+
+            ClienteEditar.Nome = ClienteEditado.Nome;
+            ClienteEditar.Cpf = ClienteEditado.Cpf;
+        }
     }
 }

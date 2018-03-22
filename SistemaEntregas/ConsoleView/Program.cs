@@ -75,6 +75,7 @@ namespace ConsoleView
                         ListarTodosClientes();
                         break;
                     case OpcoesMenuPrincipal.EditarCliente:
+                        EditarCliente();
                         break;
                     case OpcoesMenuPrincipal.ExcluirCliente:
                         ExcluirCliente();
@@ -89,9 +90,11 @@ namespace ConsoleView
                 }
             } while (opcaoDigitada != OpcoesMenuPrincipal.Sair);
         }
+
         //_____________________________________________
         //Métodos: Cliente
         //_____________________________________________
+
         private static void ExcluirCliente()
         {
             Console.WriteLine("Digite o id do cliente que deseja excluir: ");
@@ -160,6 +163,37 @@ namespace ConsoleView
             Console.WriteLine();
         }
 
+        private static void EditarCliente()
+        {
+            Console.WriteLine(" -- Editar Cliente -- ");
+            ListarTodosClientes();
+
+            Console.WriteLine("Digite o ID do cliente para ser editado: ");
+            int idCliente = int.Parse(Console.ReadLine());
+
+            ClienteController cc = new ClienteController();
+            Cliente cli = new Cliente();
+
+            Console.WriteLine("Digite o novo nome: ");
+            cli.Nome = Console.ReadLine();
+
+            Console.WriteLine("Digite o novo cpf: ");
+            cli.Cpf = Console.ReadLine();
+
+            Endereco e = AlterarEndereco(cli.EnderecoID);
+
+            //Cliente cli = cc.PesquisarPorID(idCliente);        
+
+            if (cli != null)
+            {
+
+            }
+            else
+            {
+                Console.WriteLine("Cliente não encontrado!");
+            }
+        }
+
         //_____________________________________________
         //Métodos: Endereco
         //_____________________________________________
@@ -201,5 +235,33 @@ namespace ConsoleView
             Console.WriteLine();
 
         }
+
+        private static void ExcluirEndereco()
+        {
+            Console.WriteLine("Digite o id do cliente que deseja excluir: ");
+            int idEndereco = int.Parse(Console.ReadLine());
+
+            EnderecoController ec = new EnderecoController();
+            ec.ExcluirEndereco(idEndereco);
+        }
+
+        private static Endereco AlterarEndereco(int id)
+        {
+            EnderecoController ec = new EnderecoController();
+            Endereco e = ec.PesquisarPorId(id);
+
+            Console.WriteLine("Informe as novas informações do endereco: ");
+            Console.Write("Rua: ");
+            e.Rua = Console.ReadLine();
+
+            Console.Write("Numero: ");
+            e.Numero = int.Parse(Console.ReadLine());
+            
+            Console.Write("Complemento: ");
+            e.Complemento = Console.ReadLine();
+            
+            return e;
+        }
+
     }
 }
