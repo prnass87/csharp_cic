@@ -1,0 +1,15 @@
+﻿<Window x:Class="MeuProjetoWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MeuProjetoWPF"
+        mc:Ignorable="d"
+        Title="SISTEMA ENTRAGAS" Height="295" Width="237">
+    <Grid>
+        <Button x:Name="btnOk" Content="PULA TELA" HorizontalAlignment="Left" Height="23" Margin="143,224,0,0" VerticalAlignment="Top" Width="75" Background="#FF52ECC9" Foreground="#FFF51571" BorderBrush="Black" Click="btnOk_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,224,0,0" TextWrapping="Wrap" Text="Opção: " VerticalAlignment="Top" Width="120" Background="#FFE6E2E2"/>
+        <Label Content="CLIENTES&#xA;1 - CADASTRAR NOVO&#xA;2 - PESQUISAR CLIENTE&#xA;3 - LISTAR CLIENTES CADASTRADOS&#xA;4 - EDITAR CLIENTE&#xA;5 - EXCLUIR CLIENTE&#xA;&#xA;GERAL&#xA;6 - LIMPAR TELA&#xA;7 - SAIR" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top" Height="177" Width="208" Background="#FFE6DFDF" BorderBrush="Black"/>
+        <Label Content="MENU&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="76" Height="27" Background="#FFE6DFDF"/>
+    </Grid>
+</Window>
