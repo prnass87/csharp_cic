@@ -41,10 +41,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteController.cs" />
+    <Compile Include="EnderecoController.cs" />
     <Compile Include="MotoController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VendaController.cs" />
     <Compile Include="VendedorController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{56be3ee5-9058-4070-b487-6ddb69f6d15a}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
