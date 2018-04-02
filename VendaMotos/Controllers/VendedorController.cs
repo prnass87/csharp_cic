@@ -11,5 +11,10 @@ namespace Controllers
     {
         static List<Vendedor> MeusVendedores = new List<Vendedor>();
         static int ultimoID = 0;
+
+        public void SalvarVendedor (Vendedor vendedor)
+        {
+
+        }
     }
 }
