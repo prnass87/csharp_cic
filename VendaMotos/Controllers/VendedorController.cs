@@ -46,12 +46,21 @@ namespace Controllers
                 return null;
         }
         public void excluirVendedor(int idVendedor)
-        {
+        { 
             Vendedor v = PesquisarPorID(idVendedor);
             if (v != null)
                 MeusVendedores.Remove(v);
+         }
+        public List<Vendedor> ListarVendedores()
+        {
+            return MeusVendedores;
+        }
+        public void EditarVendedor(int idVendedorEditar, Vendedor VendedorEditado)
+        {
+            Vendedor VendedorEditar = PesquisarPorID(idVendedorEditar);
 
-
+            VendedorEditar.Nome = VendedorEditado.Nome;
+            VendedorEditar.Cpf = VendedorEditado.Cpf;
         }
     }
 }
