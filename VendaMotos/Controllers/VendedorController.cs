@@ -32,7 +32,26 @@ namespace Controllers
                     return v.FirstOrDefault();
                 else
                     return null;
-            } 
-         
+            }
+
+        public Vendedor PesquisarPorID(int idVendedor)
+        {
+            var v = from x in MeusVendedores
+                    where x.PessoaID.Equals(idVendedor)
+                    select x;
+
+            if (v != null)
+                return v.FirstOrDefault();
+            else
+                return null;
+        }
+        public void excluirVendedor(int idVendedor)
+        {
+            Vendedor v = PesquisarPorID(idVendedor);
+            if (v != null)
+                MeusVendedores.Remove(v);
+
+
+        }
     }
 }
