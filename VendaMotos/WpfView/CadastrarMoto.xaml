@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfView"
         mc:Ignorable="d"
-        Title="CadastrarMoto" Height="300" Width="300">
+        Title="CADASTRO DE MOTOS" Height="300" Width="300">
     <Grid>
         
     </Grid>
