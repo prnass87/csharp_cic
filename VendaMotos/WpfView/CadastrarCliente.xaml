@@ -7,14 +7,17 @@
         mc:Ignorable="d"
         Title="CADASTRO DE CLIENTE" Height="300" Width="300">
     <Grid Margin="0,0,-8,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Label x:Name="lblNomeCliente" Content="Nome:" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="55"/>
         <TextBox x:Name="txtBoxNomeCliente" HorizontalAlignment="Left" Height="23" Margin="60,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222"/>
-        <Label Content="CPF:" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Height="23" Width="45"/>
+        <Label x:Name="lblCpfCliente" Content="CPF:" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Height="23" Width="45"/>
         <TextBox x:Name="txtBoxCPFCliente" HorizontalAlignment="Left" Height="23" Margin="55,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227"/>
         <Button x:Name="btnSalvarCliente" Content="SALVAR" HorizontalAlignment="Left" Margin="23,239,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label Content="Endereço:" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.084,0.309" Width="74"/>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="89,105,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="181" TextChanged="TextBox_TextChanged"/>
-        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="164,239,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="lblEnderecoCliente" Content="Endereço:" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.084,0.309" Width="74"/>
+        <TextBox x:Name="txtBoxeEnderecoCliente" HorizontalAlignment="Left" Height="26" Margin="72,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" TextChanged="TextBox_TextChanged"/>
+        <Button x:Name="btnCancelarCliente" Content="Cancelar" HorizontalAlignment="Left" Margin="164,239,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
