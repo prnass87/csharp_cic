@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfView"
         mc:Ignorable="d"
-        Title="EfetuarVenda" Height="300" Width="300">
+        Title="EFETUAR VENDA" Height="296.616" Width="575.188">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="32*"/>
+            <ColumnDefinition Width="157*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Cliente:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="66"/>
+        <ComboBox HorizontalAlignment="Left" Margin="76,10,0,0" VerticalAlignment="Top" Width="481" Height="26" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="30" Margin="76,51,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="481" Grid.ColumnSpan="2"/>
+        <Label Content="Vendedor" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" Width="66"/>
+        <ComboBox HorizontalAlignment="Left" Margin="76,90,0,0" VerticalAlignment="Top" Width="481" Height="26" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="33" Margin="76,121,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="481" Grid.ColumnSpan="2"/>
+        <Button Content="VENDER" HorizontalAlignment="Left" Margin="317.624,228,0,0" VerticalAlignment="Top" Width="143" Height="28" Grid.Column="1"/>
+        <Button Content="VOLTAR" HorizontalAlignment="Left" Margin="76,228,0,0" VerticalAlignment="Top" Width="143" Height="28" Grid.ColumnSpan="2"/>
+        <Label Content="Moto:" HorizontalAlignment="Left" Margin="10,159,0,0" VerticalAlignment="Top" Width="66"/>
+        <ComboBox HorizontalAlignment="Left" Margin="76,163,0,0" VerticalAlignment="Top" Width="481" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="33" Margin="76,190,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="481" Grid.ColumnSpan="2"/>
+
     </Grid>
 </Window>

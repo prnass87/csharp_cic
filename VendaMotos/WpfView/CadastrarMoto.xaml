@@ -5,28 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfView"
         mc:Ignorable="d"
-        Title="CadastrarMoto" Height="345.745" Width="491.489">
-    <Grid x:Name="lblCadastroCor" Margin="0,0,-8,0">
-        <Label x:Name="lblCadastroMoto" Content="Moto:" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="26" Width="42"/>
-        <TextBox x:Name="txtCadastroMoto" HorizontalAlignment="Left" Height="23" Margin="42,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
-        <Label HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" Grid.Row="1" Height="10" Width="10"/>
-        <Label x:Name="lblCadastroMarca" Content="Marca:" Margin="0,41,0,0" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="55" RenderTransformOrigin="-0.164,-1.665"/>
-        <TextBox x:Name="txtCadastroMarca" HorizontalAlignment="Left" Height="26" Margin="42,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" Grid.Row="1"/>
-        <Label x:Name="lblCadastroModelo" Content="Modelo:" HorizontalAlignment="Left" Margin="-5,73,0,0" VerticalAlignment="Top" Height="31" Width="55"/>
-        <Label x:Name="lblCadastroCilindrada" Content="Cilindrada:" HorizontalAlignment="Left" Margin="0,125,0,0" VerticalAlignment="Top" Height="26" Width="66"/>
-        <TextBox x:Name="txtCadastroModelo" HorizontalAlignment="Left" Height="26" Margin="47,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
-        <TextBox x:Name="txtCadastroCilindrada" HorizontalAlignment="Left" Height="26" Margin="62,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
-        <Label x:Name="lblCadastroAno" Content="Ano:" HorizontalAlignment="Left" Margin="0,164,0,0" VerticalAlignment="Top" Width="44" Height="26" RenderTransformOrigin="0.755,1.341"/>
-        <TextBox x:Name="txtCadastroAno" HorizontalAlignment="Right" Height="23" Margin="0,167,380,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69"/>
-        <Label x:Name="lblCadastroCor1" Content="Cor:" HorizontalAlignment="Left" Margin="147,167,0,0" VerticalAlignment="Top" Height="26" Width="31" RenderTransformOrigin="1.899,2.364"/>
-        <TextBox x:Name="txtCadastroCor" HorizontalAlignment="Left" Height="23" Margin="178,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtCadastroMarca1" HorizontalAlignment="Left" Height="23" Margin="47,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Placa:" HorizontalAlignment="Left" Margin="6,220,0,0" VerticalAlignment="Top" RenderTransformOrigin="-8.45,0.164"/>
-        <TextBox x:Name="txtCadastroPlaca" HorizontalAlignment="Right" Height="23" Margin="0,220,324,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Valor:" HorizontalAlignment="Left" Margin="288,216,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.211,-0.31"/>
-        <TextBox x:Name="txtCadastroValor" HorizontalAlignment="Left" Height="23" Margin="332,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Status:" HorizontalAlignment="Left" Margin="10,269,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.028,0.565"/>
-        <TextBox x:Name="txtCadastroStatus" HorizontalAlignment="Left" Margin="62,269,0,23" TextWrapping="Wrap" Width="120"/>
-
+        Title="CadastrarMoto" Height="300" Width="300">
+    <Grid>
+        
     </Grid>
 </Window>
