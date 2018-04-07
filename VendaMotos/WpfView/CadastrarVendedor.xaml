@@ -5,20 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfView"
         mc:Ignorable="d"
-        Title="CADASTRO DE VENDEDORES" Height="300" Width="300">
+        Title="CADASTRO DE VENDEDORES" Height="317.021" Width="348.936">
     <Grid Margin="0,0,-8,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="51*"/>
+            <RowDefinition Height="218*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="49*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Label x:Name="lblNomeVendedor" Content="Nome:" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="55" Height="26"/>
-        <TextBox x:Name="txtBoxNomeVendedor" HorizontalAlignment="Left" Height="23" Margin="60,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222"/>
-        <Label x:Name="lblCpfVendedor" Content="CPF:" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Height="23" Width="45" RenderTransformOrigin="0.304,0.426"/>
-        <TextBox x:Name="txtBoxCPFCliente" HorizontalAlignment="Left" Height="23" Margin="55,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227"/>
-        <Button x:Name="btnSalvarVendedor" Content="SALVAR" HorizontalAlignment="Left" Margin="23,239,0,0" VerticalAlignment="Top" Width="75" Height="20"/>
-        <Label x:Name="lblEnderecoVendedor" Content="Endereço:" HorizontalAlignment="Left" Margin="0,105,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.084,0.309" Width="74" Height="26"/>
-        <TextBox x:Name="txtEnderecoVendedor" HorizontalAlignment="Left" Height="26" Margin="60,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" TextChanged="TextBox_TextChanged"/>
-        <Button x:Name="btnCancelarVendedor" Content="Cancelar" HorizontalAlignment="Left" Margin="164,239,0,0" VerticalAlignment="Top" Width="75" Height="20"/>
+        <TextBox x:Name="txtNomeVendedor" HorizontalAlignment="Left" Height="23" Margin="60,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222"/>
+        <Label x:Name="lblCpfVendedor" Content="CPF:" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="23" Width="45" RenderTransformOrigin="0.304,0.426" Grid.Row="1"/>
+        <TextBox x:Name="txtCPFCliente" HorizontalAlignment="Left" Height="23" Margin="60,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227" Grid.Row="1"/>
+        <Button x:Name="btnSalvarVendedor" Content="SALVAR" HorizontalAlignment="Left" Margin="60,188,0,0" VerticalAlignment="Top" Width="75" Height="20" Grid.Row="1"/>
+        <Button x:Name="btnCancelarVendedor" Content="CANCELAR" Margin="212,188,62,0" VerticalAlignment="Top" Height="20" Grid.Row="1"/>
+        <Label x:Name="lblCadastroEndereco" Content="Endereço:" HorizontalAlignment="Left" Margin="9,52,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.084,0.309" Width="64" Height="26" Grid.Row="1"/>
+        <TextBox x:Name="txtCadastroEndereco" HorizontalAlignment="Left" Height="26" Margin="73,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" TextChanged="TextBox_TextChanged" Grid.Row="1"/>
+        <Label x:Name="lblCadastroRua" Content="Rua:" HorizontalAlignment="Left" Margin="22,94,0,0" VerticalAlignment="Top" Height="25" Width="33" Grid.Row="1"/>
+        <TextBox x:Name="txtCadastroRua" HorizontalAlignment="Left" Height="22" Margin="60,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Grid.Row="1"/>
+        <Label x:Name="lblCadastroNumero" Content="Nº:" HorizontalAlignment="Left" Margin="189,94,0,0" VerticalAlignment="Top" Height="25" Width="29" Grid.Row="1"/>
+        <TextBox HorizontalAlignment="Left" Height="22" Margin="223,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" RenderTransformOrigin="0.72,-0.652" Grid.Row="1"/>
+        <Label x:Name="lblCadastroComplemeto" Content="Complemento:" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.682,-0.308" Height="26" Width="94" Grid.Row="1"/>
+        <TextBox x:Name="txtCadastroComplemento" HorizontalAlignment="Left" Height="23" Margin="109,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Grid.Row="1" RenderTransformOrigin="0.818,1.194"/>
+        <Border x:Name="lblCadastroEnderecoVendedor" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="123" Margin="5,40,0,0" Grid.Row="1" VerticalAlignment="Top" Width="312"/>
 
     </Grid>
 </Window>
