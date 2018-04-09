@@ -18,16 +18,16 @@
         <Label x:Name="lblCadastroCilindrada" Content="Cilindrada:" HorizontalAlignment="Left" Margin="5,75,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.394,0.192"/>
         <TextBox x:Name="txtCadastroCilindrada" HorizontalAlignment="Left" Height="23" Margin="71,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
         <Label x:Name="lblCadastroAno" Content="Ano:" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtCadastroAno" HorizontalAlignment="Left" Height="23" Margin="49,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83"/>
+        <TextBox x:Name="txtCadastroAno" Height="23" Margin="49,119,25,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Label x:Name="lblCadastroCor" Content="Cor:" HorizontalAlignment="Left" Margin="156,116,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.806,-0.077" Grid.ColumnSpan="2"/>
         <TextBox x:Name="txtCadastroCor" HorizontalAlignment="Left" Height="23" Margin="30,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.775,-1" Grid.Column="1"/>
-        <Label x:Name="l" Content="Placa:" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.525,-0.231" Background="#FFFFF9F9"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="55,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107" Grid.ColumnSpan="2"/>
-        <Label Content="Valor:" HorizontalAlignment="Left" Margin="10,163,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.333,0.385" Width="44" Grid.Column="1"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="53,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" Grid.Column="1"/>
+        <Label x:Name="lblCadastroPlaca" Content="Placa:" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.525,-0.231" Background="#FFFFF9F9"/>
+        <TextBox x:Name="txtCadastroPlaca" HorizontalAlignment="Left" Height="23" Margin="55,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblCadastroValor" Content="Valor:" HorizontalAlignment="Left" Margin="10,163,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.333,0.385" Width="44" Grid.Column="1"/>
+        <TextBox x:Name="txtCadastroValor" HorizontalAlignment="Left" Height="23" Margin="53,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" Grid.Column="1"/>
         <Label Content="Label" HorizontalAlignment="Left" Margin="66,257,0,0" VerticalAlignment="Top"/>
-        <Label Content="Status:" HorizontalAlignment="Left" Margin="87,211,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="132,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblCadastroStatus" Content="Status:" Margin="87,211,25,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtCadastroStatus" HorizontalAlignment="Left" Height="23" Margin="132,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>
