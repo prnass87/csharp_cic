@@ -25,5 +25,39 @@ namespace EF_Aula0904.Controllers
             MeuContexto bancoDados = new MeuContexto();
             return bancoDados.tblClientes.ToList();
         }
+
+        //SELECT BY ID
+        public static Cliente CarregarPorID(int id)
+        {
+            MeuContexto bancoDados = new MeuContexto();
+            return bancoDados.tblClientes.Find(id);
+        }
+
+
+        //EDIT
+        public static void EditarClientes(int id, Cliente novoCliente)
+        {
+            MeuContexto bancoDados = new MeuContexto();
+            Cliente clienteAtual = bancoDados.tblClientes.Find(id);
+
+            clienteAtual.Nome = novoCliente.Nome;
+            clienteAtual.CPF = novoCliente.CPF;
+
+            bancoDados.Entry(clienteAtual).State = 
+                System.Data.Entity.EntityState.Modified;
+            bancoDados.SaveChanges();
+        }
+
+        //Excluir
+        public static void ExcluirCliente(int id)
+        {
+            MeuContexto bancoDados = new MeuContexto();
+            Cliente clienteAtual = bancoDados.tblClientes.Find(id);
+
+            bancoDados.Entry(clienteAtual).State =
+                System.Data.Entity.EntityState.Deleted;
+
+            bancoDados.SaveChanges();
+        }
     }
 }
