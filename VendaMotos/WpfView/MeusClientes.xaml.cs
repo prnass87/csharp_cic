@@ -26,7 +26,8 @@ namespace WpfView
 
         private void btnNovoCliente_Click(object sender, RoutedEventArgs e)
         {
-
+            CadastrarCliente nova_tela = new CadastrarCliente();
+            nova_tela.Show();
         }
 
         private void btnExcluir_Click(object sender, RoutedEventArgs e)

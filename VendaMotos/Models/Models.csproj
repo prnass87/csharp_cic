@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente.cs" />
+    <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Endereco.cs" />
     <Compile Include="Moto.cs" />
     <Compile Include="Pessoa.cs" />

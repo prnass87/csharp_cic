@@ -26,7 +26,8 @@ namespace WpfView
 
         private void btnNovaMoto_Click(object sender, RoutedEventArgs e)
         {
-
+            CadastrarMoto nova_tela = new CadastrarMoto();
+            nova_tela.Show();
         }
 
         private void btnExcluir_Click(object sender, RoutedEventArgs e)

@@ -1,6 +1,7 @@
 ﻿using Modelos;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 
 namespace Controllers
 {
@@ -13,11 +14,18 @@ namespace Controllers
 
         public void SalvarCliente(Cliente cliente)
         {
+
             //TODO: Persistir os dados do cliente.
+            Contexto ctx = new Contexto();
+            ctx.Clientes.Add(cliente);
+            ctx.SaveChanges();
+
+            /*
             int id = ultimoID + 1;
             ultimoID = id;
             cliente.PessoaID = id;
             MeusClientes.Add(cliente);
+            */
         }
 
         public Cliente PesquisarPorNome(string nome)
