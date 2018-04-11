@@ -1,16 +1,16 @@
-﻿<Window x:Class="WpfView.MeusClientes"
+﻿<Window x:Class="WpfView.MeusVendedores"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfView"
         mc:Ignorable="d"
-        Title="Meus Clientes" Height="420" Width="550" Background="#FF0D2D44" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" SizeToContent="WidthAndHeight">
-    <Grid>
+        Title="MeusVendedores" Height="430.191" Width="542.245">
 
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="MEUS CLIENTES" VerticalAlignment="Center" Height="39" Width="522" IsHitTestVisible="False" FontSize="24" TextAlignment="Center" FontWeight="Bold" Background="#FFA0CDCB" RenderTransformOrigin="0.5,0.5" Margin="10,9,10,341"/>
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="MEUS VENDEDORES" VerticalAlignment="Center" Height="39" Width="522" IsHitTestVisible="False" FontSize="24" TextAlignment="Center" FontWeight="Bold" Background="#FFA0CDCB" RenderTransformOrigin="0.5,0.5" Margin="10,9,10,341"/>
         <TabControl HorizontalAlignment="Left" Height="326" Margin="10,53,0,0" VerticalAlignment="Top" Width="522">
-            <TabItem x:Name="Tab_Lista" Header="Meus Clientes">
+            <TabItem x:Name="Tab_Lista" Header="Meus Vendedores">
                 <Grid Background="#FF0D2D44">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="113*"/>
@@ -19,7 +19,7 @@
                     <DataGrid AutoGenerateColumns="True" x:Name="dtgMeusClientes" HorizontalAlignment="Left" VerticalAlignment="Top" Height="232" Width="516" Margin="0,66,0,0" MouseDoubleClick="dtgMeusClientes_MouseDoubleClick" IsTextSearchEnabled="True" Grid.ColumnSpan="2">
                     </DataGrid>
                     <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="12.426,40,0,0" VerticalAlignment="Top" Width="91" Background="#FFA0CDCB" Click="btnExcluir_Click" Grid.Column="1"/>
-                    <Button x:Name="btnNovoCliente" Content="Novo Cliente" HorizontalAlignment="Left" Margin="283.426,40,0,0" VerticalAlignment="Top" Width="91" Background="#FFA0CDCB" Click="btnNovoCliente_Click" Grid.Column="1"/>
+                    <Button x:Name="btnNovoCliente" Content="Novo Vendedor" HorizontalAlignment="Left" Margin="283.426,40,0,0" VerticalAlignment="Top" Width="91" Background="#FFA0CDCB" Click="btnNovoCliente_Click" Grid.Column="1"/>
                     <TextBox x:Name="txtExcluir" HorizontalAlignment="Left" Height="23" Margin="103,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254" Grid.ColumnSpan="2"/>
                     <Button x:Name="btnPesquisar" Content="Buscar" HorizontalAlignment="Left" Margin="283.426,10,0,0" VerticalAlignment="Top" Width="91" Background="#FFA0CDCB" Click="btnBuscar_Click" Grid.Column="1"/>
                     <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="23" Margin="50,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="35" IsEnabled="False"/>
@@ -53,6 +53,5 @@
                 </Grid>
             </TabItem>
         </TabControl>
-
     </Grid>
 </Window>
