@@ -39,10 +39,7 @@ namespace WpfView
 
         }
 
-        private void btnNovoCliente_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
@@ -63,5 +60,10 @@ namespace WpfView
 
         }
 
+        private void btnNovoVendedor_Click_1(object sender, RoutedEventArgs e)
+        {
+            CadastrarVendedor nova_tela = new CadastrarVendedor();
+            nova_tela.Show();
+        }
     }
 }
