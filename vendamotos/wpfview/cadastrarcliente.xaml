@@ -5,26 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfView"
         mc:Ignorable="d"
-        Title="CADASTRO DE CLIENTES" Height="311" Width="357" BorderBrush="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Background="#FFE6E3E1">
-    <Grid Margin="0,0,-8,-10" Height="269" VerticalAlignment="Bottom">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="187"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <TextBox x:Name="txtNomeCliente" HorizontalAlignment="Left" Height="23" Margin="60,-1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" Grid.ColumnSpan="2"/>
-        <Label x:Name="lblCpfCliente" Content="CPF:" HorizontalAlignment="Left" Margin="11,37,0,0" VerticalAlignment="Top" Height="23" Width="45"/>
-        <TextBox x:Name="txtCPFCliente" HorizontalAlignment="Left" Height="23" Margin="55,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227" Grid.ColumnSpan="2"/>
-        <Button x:Name="btnSalvarCliente" Content="SALVAR" HorizontalAlignment="Left" Margin="45,224,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.533,0.15" Background="#FFACA7A4"/>
-        <Button x:Name="btnCancelarClinte" Content="Cancelar" HorizontalAlignment="Left" Margin="47,224,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Background="#FF938C89"/>
-        <Label x:Name="lblNomeCadastroCliente" Content="Nome:" HorizontalAlignment="Left" Margin="10,-4,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.533,-0.077"/>
-        <Label x:Name="lblCadastroRua" Content="Rua:" HorizontalAlignment="Left" Margin="22,126,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtCadastroRua" HorizontalAlignment="Left" Height="23" Margin="60,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblCadastroNumero" Content="Nº:" Grid.Column="1" HorizontalAlignment="Left" Margin="33,129,0,0" VerticalAlignment="Top"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="60,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.72,-0.652"/>
-        <Label x:Name="lblCadastroComplemeto" Content="Complemento:" HorizontalAlignment="Left" Margin="22,165,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.682,-0.308"/>
-        <TextBox x:Name="txtCadastroComplemento" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="115,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Endereço" HorizontalAlignment="Left" Margin="22,98,0,0" VerticalAlignment="Top"/>
-        <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="112" Margin="11,98,0,0" VerticalAlignment="Top" Width="336"/>
+        Title="Novo Cliente" Height="420" Width="550" Background="#FF0D2D44" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="Nome" HorizontalAlignment="Left" Margin="87,75,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="52" Height="25"/>
+        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="22" Margin="161,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="337" Foreground="Black" OpacityMask="Black"/>
+        <Label Content="CPF" HorizontalAlignment="Left" Margin="87,103,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="35" Height="24"/>
+        <TextBox x:Name="txtCPF" HorizontalAlignment="Left" Height="22" Margin="161,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black"/>
+        <Label Content="Endereco" HorizontalAlignment="Left" Margin="87,161,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="59" Height="25"/>
+        <Label Content="Rua" HorizontalAlignment="Left" Margin="86,190,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="45" Height="26"/>
+        <TextBox x:Name="txtRua" HorizontalAlignment="Left" Height="23" Margin="161,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="337" Foreground="Black" OpacityMask="Black"/>
+
+        <Label Content="Compl." HorizontalAlignment="Left" Margin="87,220,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="68" Height="25"/>
+        <TextBox x:Name="txtComplemento" HorizontalAlignment="Left" Height="22" Margin="161,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="337" Foreground="Black" OpacityMask="Black"/>
+        <Label Content="Número" HorizontalAlignment="Left" Margin="86,248,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="67" Height="25"/>
+        <TextBox x:Name="txtNumero" HorizontalAlignment="Left" Height="22" Margin="161,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black"/>
+        <Button x:Name="btnAdicionar" Content="Adicionar" HorizontalAlignment="Left" Margin="116,356,0,0" VerticalAlignment="Top" Width="105" Height="24" OpacityMask="Black" Foreground="Black" Background="#FFA0CDCB" BorderBrush="#FFA0CDCB" Click="btnAdicionar_Click"/>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="CADASTRAR CLIENTE" VerticalAlignment="Center" Height="38" Width="522" IsHitTestVisible="False" FontSize="24" TextAlignment="Center" FontWeight="Bold" Background="#FFA0CDCB" RenderTransformOrigin="0.5,0.5" Margin="10,27,10,325">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1" ScaleX="1"/>
+                    <SkewTransform AngleY="0" AngleX="0"/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <Button x:Name="btnLimpar" Content="Limpar" HorizontalAlignment="Left" Margin="356,356,0,0" VerticalAlignment="Top" Width="105" OpacityMask="Black" Foreground="Black" Background="#FFA0CDCB" BorderBrush="#FFA0CDCB" Click="btnLimpar_Click" Height="24"/>
+        <Button x:Name="btnVoltar" Content="Voltar" HorizontalAlignment="Left" Margin="236,356,0,0" VerticalAlignment="Top" Width="105" Height="24" OpacityMask="Black" Foreground="Black" Background="#FFA0CDCB" BorderBrush="#FFA0CDCB" Click="btnVoltar_Click"/>
 
     </Grid>
 </Window>
