@@ -10,13 +10,13 @@
     <Grid>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="MEUS VENDEDORES" VerticalAlignment="Center" Height="39" Width="522" IsHitTestVisible="False" FontSize="24" TextAlignment="Center" FontWeight="Bold" Background="#FFA0CDCB" RenderTransformOrigin="0.5,0.5" Margin="10,9,10,341"/>
         <TabControl HorizontalAlignment="Left" Height="326" Margin="10,53,0,0" VerticalAlignment="Top" Width="522">
-            <TabItem x:Name="Tab_Lista" Header="Meus Vendedores">
+            <TabItem x:Name="Tab_Lista" Header="Meus Vendedores" Height="22" VerticalAlignment="Bottom">
                 <Grid Background="#FF0D2D44">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="113*"/>
                         <ColumnDefinition Width="403*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid AutoGenerateColumns="True" x:Name="dtgMeusClientes" HorizontalAlignment="Left" VerticalAlignment="Top" Height="232" Width="516" Margin="0,66,0,0" MouseDoubleClick="dtgMeusClientes_MouseDoubleClick" IsTextSearchEnabled="True" Grid.ColumnSpan="2">
+                    <DataGrid AutoGenerateColumns="True" x:Name="dtgMeusVendedores" HorizontalAlignment="Left" VerticalAlignment="Top" Height="232" Width="516" Margin="0,66,0,0" MouseDoubleClick="dtgMeusVendedores_MouseDoubleClick" IsTextSearchEnabled="True" Grid.ColumnSpan="2">
                     </DataGrid>
                     <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="12.426,40,0,0" VerticalAlignment="Top" Width="91" Background="#FFA0CDCB" Click="btnExcluir_Click" Grid.Column="1"/>
                     <Button x:Name="btnNovoCliente" Content="Novo Vendedor" HorizontalAlignment="Left" Margin="283.426,40,0,0" VerticalAlignment="Top" Width="91" Background="#FFA0CDCB" Click="btnNovoCliente_Click" Grid.Column="1"/>
