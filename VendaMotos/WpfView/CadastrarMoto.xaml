@@ -5,29 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfView"
         mc:Ignorable="d"
-        Title="CadastrarMoto" Height="298" Width="365" Background="#FFF9F3F3" Foreground="#FFECE1E5">
-    <Grid Margin="0,0,2,0">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="157*"/>
-            <ColumnDefinition Width="198*"/>
-        </Grid.ColumnDefinitions>
-        <Label x:Name="lblCadastroMarca" Content="Marca:" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.378,0.615"/>
-        <TextBox x:Name="txtCadastroMarca" HorizontalAlignment="Left" Height="23" Margin="55,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"/>
-        <Label x:Name="lblCadastroModelo" Content="Modelo:" HorizontalAlignment="Left" Margin="156,28,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.389,-1.154" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtCadastroModelo" HorizontalAlignment="Left" Height="23" Margin="53,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.633,0.13" Grid.Column="1"/>
-        <Label x:Name="lblCadastroCilindrada" Content="Cilindrada:" HorizontalAlignment="Left" Margin="5,75,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.394,0.192"/>
-        <TextBox x:Name="txtCadastroCilindrada" HorizontalAlignment="Left" Height="23" Margin="71,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
-        <Label x:Name="lblCadastroAno" Content="Ano:" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtCadastroAno" Height="23" Margin="49,119,25,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Label x:Name="lblCadastroCor" Content="Cor:" HorizontalAlignment="Left" Margin="156,116,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.806,-0.077" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtCadastroCor" HorizontalAlignment="Left" Height="23" Margin="30,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.775,-1" Grid.Column="1"/>
-        <Label x:Name="lblCadastroPlaca" Content="Placa:" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.525,-0.231" Background="#FFFFF9F9"/>
-        <TextBox x:Name="txtCadastroPlaca" HorizontalAlignment="Left" Height="23" Margin="55,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107" Grid.ColumnSpan="2"/>
-        <Label x:Name="lblCadastroValor" Content="Valor:" HorizontalAlignment="Left" Margin="10,163,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.333,0.385" Width="44" Grid.Column="1"/>
-        <TextBox x:Name="txtCadastroValor" HorizontalAlignment="Left" Height="23" Margin="53,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" Grid.Column="1"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="66,257,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblCadastroStatus" Content="Status:" Margin="87,211,25,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtCadastroStatus" HorizontalAlignment="Left" Height="23" Margin="132,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        Title="Nova Moto" Height="420" Width="550" Background="#FF0D2D44" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="Marca" HorizontalAlignment="Left" Margin="154,80,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="52" Height="25"/>
+        <Label Content="Modelo" HorizontalAlignment="Left" Margin="154,109,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="112" Height="25"/>
+        <Label Content="Cilindrada" HorizontalAlignment="Left" Margin="154,138,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="67" Height="24"/>
+        <Label Content="Ano" HorizontalAlignment="Left" Margin="154,166,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="52" Height="25"/>
+        <Label Content="Cor" HorizontalAlignment="Left" Margin="154,195,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="45" Height="26"/>
+        <Label Content="Placa" HorizontalAlignment="Left" Margin="154,225,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="68" Height="25"/>
+        <Label Content="Valor" HorizontalAlignment="Left" Margin="154,254,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="115" Height="25"/>
+        <Label Content="Status" HorizontalAlignment="Left" Margin="154,282,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="67" Height="25"/>
 
+        <TextBox x:Name="txtMarca" HorizontalAlignment="Left" Height="22" Margin="250,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black"/>
+        <TextBox x:Name="txtModelo" HorizontalAlignment="Left" Height="22" Margin="250,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black" MaxLength="4"/>
+        <TextBox x:Name="txtCilindrada" HorizontalAlignment="Left" Height="22" Margin="250,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black"/>
+        <TextBox x:Name="txtAnoFabric" HorizontalAlignment="Left" Height="22" Margin="250,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black"/>
+        <TextBox x:Name="txtCor" HorizontalAlignment="Left" Height="23" Margin="250,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black"/>
+        <TextBox x:Name="txtPlaca" HorizontalAlignment="Left" Height="22" Margin="250,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black"/>
+        <TextBox x:Name="txtValor" HorizontalAlignment="Left" Height="22" Margin="250,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black" MaxLength="4"/>
+        <TextBox x:Name="txtStatus" HorizontalAlignment="Left" Height="22" Margin="250,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black"/>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="CADASTRAR MOTO" VerticalAlignment="Center" Height="38" Width="522" IsHitTestVisible="False" FontSize="24" TextAlignment="Center" FontWeight="Bold" Background="#FFA0CDCB" RenderTransformOrigin="0.5,0.5" Margin="10,27,10,325">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1" ScaleX="1"/>
+                    <SkewTransform AngleY="0" AngleX="0"/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <Button x:Name="btnAdicionar" Content="Adicionar" HorizontalAlignment="Left" Margin="116,356,0,0" VerticalAlignment="Top" Width="105" Height="24" OpacityMask="Black" Foreground="Black" Background="#FFA0CDCB" BorderBrush="#FFA0CDCB" Click="btnAdicionar_Click"/>
+        <Button x:Name="btnLimpar" Content="Limpar" HorizontalAlignment="Left" Margin="356,356,0,0" VerticalAlignment="Top" Width="105" OpacityMask="Black" Foreground="Black" Background="#FFA0CDCB" BorderBrush="#FFA0CDCB" Click="btnLimpar_Click" Height="24"/>
+        <Button x:Name="btnVoltar" Content="Voltar" HorizontalAlignment="Left" Margin="236,356,0,0" VerticalAlignment="Top" Width="105" Height="24" OpacityMask="Black" Foreground="Black" Background="#FFA0CDCB" BorderBrush="#FFA0CDCB" Click="btnVoltar_Click"/>
     </Grid>
 </Window>

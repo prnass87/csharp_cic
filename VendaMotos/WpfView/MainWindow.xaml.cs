@@ -30,5 +30,11 @@ namespace WpfView
             MeusClientes nova_tela = new MeusClientes();
             nova_tela.Show();
         }
+
+        private void btnMotos_Click(object sender, RoutedEventArgs e)
+        {
+            MinhasMotos nova_tela = new MinhasMotos();
+            nova_tela.Show();
+        }
     }
 }
