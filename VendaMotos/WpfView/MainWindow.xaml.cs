@@ -24,5 +24,11 @@ namespace WpfView
         {
             InitializeComponent();
         }
+
+        private void btnCliente_Click(object sender, RoutedEventArgs e)
+        {
+            MeusClientes nova_tela = new MeusClientes();
+            nova_tela.Show();
+        }
     }
 }

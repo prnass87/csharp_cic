@@ -5,13 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfView"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Sistema de Venda de Motos" Height="420" Width="550" Background="#FF0D2D44" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button Content="CLIENTES" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Width="497" Height="40"/>
-        <Label x:Name="___Sem_Nome_" Content="SISTEMA DE VENDA DE MOTOS" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="497" Height="48" FontSize="20" FontWeight="Bold"/>
-        <Button Content="VENDEDORES" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Width="497" Height="40"/>
-        <Button Content="MOTOS" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top" Width="497" Height="40"/>
-        <Button Content="EFETUAR VENDA" HorizontalAlignment="Left" Margin="10,229,0,0" VerticalAlignment="Top" Width="431" Height="80"/>
-        <Button Content="FECHAR" HorizontalAlignment="Left" Margin="457,259,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="SISTEMA DE VENDA DE MOTOS" VerticalAlignment="Center" Height="40" Width="522" IsHitTestVisible="False" FontSize="24" TextAlignment="Center" FontWeight="Bold" Background="#FFA0CDCB" RenderTransformOrigin="0.5,0.5" Margin="10,35,10,315"/>
+        <Button x:Name="btnCliente" Content="CLIENTES" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Width="170" Height="170" Background="#FFA0CDCB" BorderBrush="#FFA0CDCB" Click="btnCliente_Click" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Black"/>
+        <Button Content="VENDEDORES" HorizontalAlignment="Left" Margin="186,91,0,0" VerticalAlignment="Top" Width="170" Height="170" Background="#FFA0CDCB" BorderBrush="#FFA0CDCB" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Black"/>
+        <Button Content="MOTOS" HorizontalAlignment="Left" Margin="362,91,0,0" VerticalAlignment="Top" Width="170" Height="170" Background="#FFA0CDCB" BorderBrush="#FFA0CDCB" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Black"/>
+        <Button Content="EFETUAR VENDA" HorizontalAlignment="Left" Margin="10,266,0,0" VerticalAlignment="Top" Width="522" Height="100" Background="#FFA0CDCB" BorderBrush="#FFA0CDCB" FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Black"/>
     </Grid>
 </Window>

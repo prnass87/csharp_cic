@@ -1,6 +1,4 @@
 ﻿using System;
-using Controllers;
-using Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,28 +15,13 @@ using System.Windows.Shapes;
 namespace WpfView
 {
     /// <summary>
-    /// Lógica interna para CadastrarCliente.xaml
+    /// Lógica interna para MinhasMotos.xaml
     /// </summary>
-    public partial class CadastrarCliente : Window
+    public partial class MinhasMotos : Window
     {
-        public CadastrarCliente()
+        public MinhasMotos()
         {
             InitializeComponent();
-        }
-
-        private void btnAdicionar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnLimpar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnVoltar_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
