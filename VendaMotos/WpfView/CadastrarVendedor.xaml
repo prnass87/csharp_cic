@@ -5,29 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfView"
         mc:Ignorable="d"
-        Title="CADASTRO DE VENDEDORES" Height="317.021" Width="348.936">
-    <Grid Margin="0,0,-8,0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="51*"/>
-            <RowDefinition Height="218*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Label x:Name="lblNomeVendedor" Content="Nome:" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="55" Height="26"/>
-        <TextBox x:Name="txtNomeVendedor" HorizontalAlignment="Left" Height="23" Margin="60,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222"/>
-        <Label x:Name="lblCpfVendedor" Content="CPF:" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="23" Width="45" RenderTransformOrigin="0.304,0.426" Grid.Row="1"/>
-        <TextBox x:Name="txtCPFCliente" HorizontalAlignment="Left" Height="23" Margin="60,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227" Grid.Row="1"/>
-        <Button x:Name="btnSalvarVendedor" Content="SALVAR" HorizontalAlignment="Left" Margin="60,188,0,0" VerticalAlignment="Top" Width="75" Height="20" Grid.Row="1"/>
-        <Button x:Name="btnCancelarVendedor" Content="CANCELAR" Margin="212,188,62,0" VerticalAlignment="Top" Height="20" Grid.Row="1"/>
-        <Label x:Name="lblCadastroRua" Content="Rua:" HorizontalAlignment="Left" Margin="22,94,0,0" VerticalAlignment="Top" Height="25" Width="33" Grid.Row="1"/>
-        <TextBox x:Name="txtCadastroRua" HorizontalAlignment="Left" Height="22" Margin="60,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Grid.Row="1"/>
-        <Label x:Name="lblCadastroNumero" Content="Nº:" HorizontalAlignment="Left" Margin="189,94,0,0" VerticalAlignment="Top" Height="25" Width="29" Grid.Row="1"/>
-        <TextBox HorizontalAlignment="Left" Height="22" Margin="223,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" RenderTransformOrigin="0.72,-0.652" Grid.Row="1"/>
-        <Label x:Name="lblCadastroComplemeto" Content="Complemento:" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.682,-0.308" Height="26" Width="94" Grid.Row="1"/>
-        <TextBox x:Name="txtCadastroComplemento" HorizontalAlignment="Left" Height="23" Margin="109,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Grid.Row="1" RenderTransformOrigin="0.818,1.194"/>
-        <Label Content="Endereço" HorizontalAlignment="Left" Margin="22,63,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.821,0.056"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="106" Margin="5,63,0,0" Grid.Row="1" VerticalAlignment="Top" Width="334"/>
+        Title="Novo Vendedor" Height="420" Width="550" Background="#FF0D2D44" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="Nome" HorizontalAlignment="Left" Margin="87,75,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="52" Height="25"/>
+        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="22" Margin="161,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="337" Foreground="Black" OpacityMask="Black"/>
+        <Label Content="CPF" HorizontalAlignment="Left" Margin="87,103,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="35" Height="24"/>
+        <TextBox x:Name="txtCPF" HorizontalAlignment="Left" Height="22" Margin="161,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black"/>
+        <Label Content="Endereco" HorizontalAlignment="Left" Margin="87,161,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="59" Height="25"/>
+        <Label Content="Rua" HorizontalAlignment="Left" Margin="86,190,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="45" Height="26"/>
+        <TextBox x:Name="txtRua" HorizontalAlignment="Left" Height="23" Margin="161,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="337" Foreground="Black" OpacityMask="Black"/>
+
+        <Label Content="Compl." HorizontalAlignment="Left" Margin="87,220,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="68" Height="25"/>
+        <TextBox x:Name="txtComplemento" HorizontalAlignment="Left" Height="22" Margin="161,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="337" Foreground="Black" OpacityMask="Black"/>
+        <Label Content="Número" HorizontalAlignment="Left" Margin="86,248,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="67" Height="25"/>
+        <TextBox x:Name="txtNumero" HorizontalAlignment="Left" Height="22" Margin="161,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black"/>
+        <Button x:Name="btnAdicionar" Content="Adicionar" HorizontalAlignment="Left" Margin="116,356,0,0" VerticalAlignment="Top" Width="105" Height="24" OpacityMask="Black" Foreground="Black" Background="#FFA0CDCB" BorderBrush="#FFA0CDCB" Click="btnAdicionar_Click"/>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="CADASTRAR VENDEDOR" VerticalAlignment="Center" Height="38" Width="522" IsHitTestVisible="False" FontSize="24" TextAlignment="Center" FontWeight="Bold" Background="#FFA0CDCB" RenderTransformOrigin="0.5,0.5" Margin="10,27,10,325">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1" ScaleX="1"/>
+                    <SkewTransform AngleY="0" AngleX="0"/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <Button x:Name="btnLimpar" Content="Limpar" HorizontalAlignment="Left" Margin="356,356,0,0" VerticalAlignment="Top" Width="105" OpacityMask="Black" Foreground="Black" Background="#FFA0CDCB" BorderBrush="#FFA0CDCB" Click="btnLimpar_Click" Height="24"/>
+        <Button x:Name="btnVoltar" Content="Voltar" HorizontalAlignment="Left" Margin="236,356,0,0" VerticalAlignment="Top" Width="105" Height="24" OpacityMask="Black" Foreground="Black" Background="#FFA0CDCB" BorderBrush="#FFA0CDCB" Click="btnVoltar_Click"/>
 
     </Grid>
 </Window>
