@@ -38,7 +38,7 @@ namespace WpfView
 
         private void btnVoltar_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }
