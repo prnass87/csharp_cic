@@ -27,7 +27,7 @@
                     <Label Content="ID" HorizontalAlignment="Left" Margin="27,8,0,0" VerticalAlignment="Top" Foreground="White"/>
                     <Label Content="Sua loja possui: " HorizontalAlignment="Left" Margin="157.426,-29,0,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1"/>
                     <Button x:Name="btnAtualizar" Content="Atualizar" HorizontalAlignment="Left" Margin="39,40,0,0" VerticalAlignment="Top" Width="57" Background="#FFAEDC4B" Click="btnAtualizar_Click"/>
-                    <Label x:Name="lblQuantidadeClientes" Content="" HorizontalAlignment="Left" Margin="275.426,-29,0,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1"/>
+                    <Label x:Name="lblQuantidadeVendedores" Content="" HorizontalAlignment="Left" Margin="275.426,-29,0,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1"/>
                     <Label Content="vendedores." HorizontalAlignment="Left" Margin="293.426,-29,0,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1"/>
                 </Grid>
             </TabItem>
