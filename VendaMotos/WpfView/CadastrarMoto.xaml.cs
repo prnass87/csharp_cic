@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Models.DAL;
 
 namespace WpfView
 {
@@ -21,6 +22,9 @@ namespace WpfView
     /// </summary>
     public partial class CadastrarMoto : Window
     {
+
+        Contexto ctx = new Contexto();
+
         public CadastrarMoto()
         {
             InitializeComponent();
@@ -33,7 +37,14 @@ namespace WpfView
 
         private void btnLimpar_Click(object sender, RoutedEventArgs e)
         {
-
+            txtMarca.Text = "";
+            txtModelo.Text = "";
+            txtCilindrada.Text = "";
+            txtAnoFabric.Text = "";
+            txtCor.Text = "";
+            txtPlaca.Text = "";
+            txtValor.Text = "";
+            txtStatus.Text = "";
         }
 
         private void btnVoltar_Click(object sender, RoutedEventArgs e)

@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Models.DAL;
 
 namespace WpfView
 {
@@ -21,6 +22,9 @@ namespace WpfView
     /// </summary>
     public partial class CadastrarVendedor : Window
     {
+
+        Contexto ctx = new Contexto();
+
         public CadastrarVendedor()
         {
             InitializeComponent();
@@ -33,12 +37,16 @@ namespace WpfView
 
         private void btnVoltar_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
 
         private void btnLimpar_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            txtNome.Text = "";
+            txtCPF.Text = "";
+            txtRua.Text = "";
+            txtComplemento.Text = "";
+            txtNumero.Text = "";
         }
     }
 }
