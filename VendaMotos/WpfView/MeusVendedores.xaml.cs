@@ -55,6 +55,7 @@ namespace WpfView
         {
 
         }
+
         private void dtgMeusVendedores_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 

@@ -25,5 +25,22 @@ namespace WpfView
         {
             InitializeComponent();
         }
+
+        private void btnAdicionar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnLimpar_Click(object sender, RoutedEventArgs e)
+        {
+            cbxCliente.Text = "";
+            cbxMoto.Text = "";
+            cbxVendedor.Text = "";
+        }
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

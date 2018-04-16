@@ -113,6 +113,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MinhasVendas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MeusClientes.xaml.cs">
@@ -123,6 +127,9 @@
     </Compile>
     <Compile Include="MinhasMotos.xaml.cs">
       <DependentUpon>MinhasMotos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MinhasVendas.xaml.cs">
+      <DependentUpon>MinhasVendas.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
