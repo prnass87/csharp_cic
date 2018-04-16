@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace Models
     public class Venda
     {
         //Informações: VENDA
+        [Key]
         public int VendaID { get; set; }
         public DateTime DataVenda { get; set; }
 
