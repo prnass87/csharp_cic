@@ -65,12 +65,8 @@ namespace WpfView
 
             ClienteController cc = new ClienteController();
             cc.SalvarCliente(NovoCliente);
-
-            txtNome.Text = "";
-            txtCPF.Text = "";
-            txtRua.Text = "";
-            txtComplemento.Text = "";
-            txtNumero.Text = "";
+            MessageBox.Show("Cliente cadastrado com sucesso!");
+            Limpar();
         }
 
 

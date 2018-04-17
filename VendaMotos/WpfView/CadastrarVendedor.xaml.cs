@@ -67,6 +67,8 @@ namespace WpfView
 
             VendedorController vc = new VendedorController();
             vc.SalvarVendedor(NovoVendedor);
+            MessageBox.Show("Vendedor cadastrado com sucesso!");
+            Limpar();
         }
 
         //________________________________________________________________

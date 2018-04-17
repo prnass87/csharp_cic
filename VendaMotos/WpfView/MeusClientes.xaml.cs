@@ -35,7 +35,7 @@ namespace WpfView
             {
                 
             }
-            lblQuantidadeClientes.Content = ctx.tblClientes.Count();
+                lblQuantidadeClientes.Content = ctx.tblClientes.Count();
         }
 
         private void btnNovoCliente_Click(object sender, RoutedEventArgs e)
