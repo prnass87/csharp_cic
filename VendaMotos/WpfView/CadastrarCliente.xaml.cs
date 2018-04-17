@@ -22,10 +22,7 @@ namespace WpfView
     /// </summary>
     public partial class CadastrarCliente : Window
     {
-
-        Contexto ctx = new Contexto();
-        Cliente NovoCliente = null;
-
+        
         public CadastrarCliente()
         {
             InitializeComponent();
@@ -35,36 +32,18 @@ namespace WpfView
         {
             try
             {
-                NovoCliente = new Cliente();
-                NovoCliente.Nome = txtNome.Text;
-                NovoCliente.Cpf = txtCPF.Text;
-                NovoCliente._Endereco.Rua = txtRua.Text;
-                NovoCliente._Endereco.Complemento = txtComplemento.Text;
-                NovoCliente._Endereco.Numero = int.Parse(txtNumero.Text);
-
-                ctx.tblClientes.Add(NovoCliente);
-                ctx.SaveChanges();
-
-                txtNome.Text = "";
-                txtCPF.Text = "";
-                txtRua.Text = "";
-                txtComplemento.Text = "";
-                txtNumero.Text = "";
-
+                CadastroCliente();
             }
             catch
             {
                 MessageBox.Show("Você precisa preencher todos os campos primeiro!!");
             }
+
         }
 
         private void btnLimpar_Click(object sender, RoutedEventArgs e)
         {
-            txtNome.Text = "";
-            txtCPF.Text = "";
-            txtRua.Text = "";
-            txtComplemento.Text = "";
-            txtNumero.Text = "";
+            Limpar();
         }
 
         private void btnVoltar_Click(object sender, RoutedEventArgs e)
@@ -72,5 +51,55 @@ namespace WpfView
             Close();
         }
 
+        //_____________________________________________
+        //Métodos: Cliente
+        //_____________________________________________
+        public void CadastroCliente()
+        {
+            Cliente NovoCliente = new Cliente();
+
+            NovoCliente.Nome = txtNome.Text;
+            NovoCliente.Cpf = txtCPF.Text;
+
+            NovoCliente.EnderecoID = CadastroEndereco().EnderecoID;
+
+            ClienteController cc = new ClienteController();
+            cc.SalvarCliente(NovoCliente);
+
+            txtNome.Text = "";
+            txtCPF.Text = "";
+            txtRua.Text = "";
+            txtComplemento.Text = "";
+            txtNumero.Text = "";
+        }
+
+
+        //_____________________________________________
+        //Métodos: Endereco
+        //_____________________________________________
+        public Endereco CadastroEndereco()
+        {
+            Endereco end = new Endereco();
+
+            end.Rua = txtRua.Text;
+            end.Complemento = txtComplemento.Text;
+            end.Numero = int.Parse(txtNumero.Text);
+
+            EnderecoController ec = new EnderecoController();
+            ec.SalvarEndereco(end);
+            return end;
+        }
+
+        //_____________________________________________
+        //Métodos: Limpar
+        //_____________________________________________
+        public void Limpar()
+        {
+            txtNome.Text = "";
+            txtCPF.Text = "";
+            txtRua.Text = "";
+            txtComplemento.Text = "";
+            txtNumero.Text = "";
+        }
     }
 }

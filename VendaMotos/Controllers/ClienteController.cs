@@ -1,4 +1,5 @@
 ﻿using Models;
+using Models.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,18 +10,14 @@ namespace Controllers
 {
     public class ClienteController
     {
-        static List<Cliente> MeusClientes = new List<Cliente>();
-        static int ultimoID = 0;
 
         public void SalvarCliente(Cliente cliente)
         {
-            //TODO: Persistir os dados do cliente.
-            int id = ultimoID + 1;
-            ultimoID = id;
-            cliente.PessoaID = id;
-            MeusClientes.Add(cliente);
+            Contexto ctx = new Contexto();
+            ctx.tblClientes.Add(cliente);
+            ctx.SaveChanges();
         }
-
+        /*
         public Cliente PesquisarPorNome(string nome)
         {
             var c = from x in MeusClientes
@@ -64,6 +61,7 @@ namespace Controllers
             ClienteEditar.Nome = ClienteEditado.Nome;
             ClienteEditar.Cpf = ClienteEditado.Cpf;
         }
+        */
 
     }
 }

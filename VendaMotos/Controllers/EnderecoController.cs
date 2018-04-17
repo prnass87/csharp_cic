@@ -1,4 +1,5 @@
 ﻿using Models;
+using Models.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,17 +10,14 @@ namespace Controllers
 {
     public class EnderecoController
     {
-        static List<Endereco> EnderecosCadastrados = new List<Endereco>();
-        static int ultimoId = 0;
 
         public void SalvarEndereco(Endereco endereco)
         {
-            int id = ultimoId + 1;
-            ultimoId = id;
-            endereco.EnderecoID = id;
-            EnderecosCadastrados.Add(endereco);
+            Contexto ctx = new Contexto();
+            ctx.tblEnderecos.Add(endereco);
+            ctx.SaveChanges();
         }
-
+        /*
         public Endereco PesquisarPorId(int idEndereco)
         {
             var e = from x in EnderecosCadastrados
@@ -42,5 +40,6 @@ namespace Controllers
         {
             return EnderecosCadastrados;
         }
+        */
     }
 }
