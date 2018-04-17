@@ -32,6 +32,14 @@ namespace WpfView
 
         private void btnAdicionar_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                CadastroVendedor();
+            }
+            catch
+            {
+                MessageBox.Show("Voce precisa preencher  todos os campos primeiro");
+            }
 
         }
 
@@ -41,6 +49,46 @@ namespace WpfView
         }
 
         private void btnLimpar_Click(object sender, RoutedEventArgs e)
+        {
+            Limpar();
+        }
+
+        //________________________________________________________________
+        //Metodos Vendedores
+        //________________________________________________________________
+
+        public void CadastroVendedor()
+        {
+            Vendedor NovoVendedor = new Vendedor();
+            NovoVendedor.Nome = txtNome.Text;
+            NovoVendedor.Cpf = txtCPF.Text;
+
+            NovoVendedor.EnderecoID = CadastroEndereco().EnderecoID;
+
+            VendedorController vc = new VendedorController();
+            vc.SalvarVendedor(NovoVendedor);
+        }
+
+        //________________________________________________________________
+        //Metodos Endereco
+        //________________________________________________________________
+
+        public Endereco CadastroEndereco()
+        {
+            Endereco end = new Endereco();
+            end.Rua = txtRua.Text;
+            end.Complemento = txtComplemento.Text;
+            end.Numero =  int.Parse(txtNumero.Text);
+
+            EnderecoController ec = new EnderecoController();
+            ec.SalvarEndereco(end);
+            return end;
+        }
+        //________________________________________________________________
+        //Metodos Limpar
+        //________________________________________________________________
+
+        public void Limpar()
         {
             txtNome.Text = "";
             txtCPF.Text = "";

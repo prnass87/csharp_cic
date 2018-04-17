@@ -1,4 +1,5 @@
 ﻿using Models;
+using Models.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,19 +10,16 @@ namespace Controllers
 {
      public class VendedorController
     {
-        static List<Vendedor> MeusVendedores = new List<Vendedor>();
-        static int ultimoID = 0;
+        
 
         public void SalvarVendedor(Vendedor vendedor)
         {
-            int id = ultimoID + 1;
-            ultimoID = id;
-            vendedor.PessoaID = id;
-            MeusVendedores.Add(vendedor);
-
+            Contexto ctx = new Contexto();
+            ctx.tblVendedores.Add(vendedor);
+            ctx.SaveChanges();
 
         }
-
+        /*
           public Vendedor PesquisarPorNome(string nome)
           {
                 var v = from x in MeusVendedores
@@ -62,5 +60,6 @@ namespace Controllers
             VendedorEditar.Nome = VendedorEditado.Nome;
             VendedorEditar.Cpf = VendedorEditado.Cpf;
         }
+        */
     }
 }
