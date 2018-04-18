@@ -16,7 +16,7 @@ namespace Models
 
         //Informações: ENDERECO
         public int EnderecoID { get; set; }
-        public Endereco _Endereco { get; set; }
+        public virtual Endereco _Endereco { get; set; }
 
     }
 }

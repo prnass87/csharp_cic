@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Controllers;
+using Models;
 using Models.DAL;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,7 @@ namespace WpfView
         Contexto ctx = new Contexto();
         Cliente selecionado = null;
 
+        //Inicializa e carrega a tela;
         public MeusClientes()
         {
             InitializeComponent();
@@ -38,13 +40,14 @@ namespace WpfView
                 lblQuantidadeClientes.Content = ctx.tblClientes.Count();
         }
 
+        //Cadastra o cliente
         private void btnNovoCliente_Click(object sender, RoutedEventArgs e)
         {
             CadastrarCliente nova_tela = new CadastrarCliente();
             nova_tela.Show();
         }
 
-
+        //Pega o cliente selecionado no datagrid
         private void dtgMeusClientes_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             try
@@ -59,46 +62,35 @@ namespace WpfView
             }
         }
 
+        //Excluir cliente (ERRO)
         private void btnExcluir_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                int ID = selecionado.PessoaID;
-                selecionado = (from c in ctx.tblClientes
-                               where c.PessoaID == ID
-                               select c).First();
+                ClienteController cc = new ClienteController();
+                selecionado = cc.PesquisarPorID(selecionado.PessoaID);
             }
             catch (Exception)
             {
                 MessageBox.Show("Selecione um item para excluir!!");
             }
+
             if (selecionado == null)
             {
                 return;
             }
             else
             {
-                ctx.tblClientes.Remove(selecionado);
-                ctx.SaveChanges();
-                txtID.Text = "";
-                txtExcluir.Text = "";
-                dtgMeusClientes.ItemsSource = ctx.tblClientes.ToList();
-                lblQuantidadeClientes.Content = ctx.tblClientes.Count();
+                ExcluirCliente();
             }
         }
-
-
+        
+        //Altera para a tela de edição
         private void btnEditar_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                Tab_Editar.IsSelected = true;
-
-                txtPesquisaNome.Text = selecionado.Nome;
-                txtPesquisaCPF.Text = selecionado.Cpf;
-                txtPesquisaRua.Text = selecionado._Endereco.Rua;
-                txtPesquisaComplemento.Text = selecionado._Endereco.Complemento;
-                txtPesquisaNumero.Text = selecionado._Endereco.Numero.ToString();
+                TabEditar();
             }
             catch
             {
@@ -108,23 +100,22 @@ namespace WpfView
             txtID.Text = "";
         }
 
+        //Atualiza grid
         private void btnAtualizar_Click(object sender, RoutedEventArgs e)
         {
-            dtgMeusClientes.ItemsSource = ctx.tblClientes.ToList();
-            txtID.Text = "";
-            txtExcluir.Text = "";
-            lblQuantidadeClientes.Content = ctx.tblClientes.Count();
+            AtualizarTela();
         }
 
+        //Pesquisando clientes por nome.
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
             List<Cliente> selecao = new List<Cliente>();
 
             try
             {
-                selecionado = (from c in ctx.tblClientes
-                               where c.Nome.Contains(txtExcluir.Text)
-                               select c).First();
+                ClienteController cc = new ClienteController();
+                selecionado = cc.PesquisarPorNome(txtExcluir.Text);
+
                 if (selecionado == null)
                 {
                     return;
@@ -148,25 +139,7 @@ namespace WpfView
         {
             try
             {
-                selecionado.Nome = txtPesquisaNome.Text;
-                selecionado.Cpf = txtPesquisaCPF.Text;
-                selecionado._Endereco.Rua = txtPesquisaRua.Text;
-                selecionado._Endereco.Complemento = txtPesquisaComplemento.Text;
-                selecionado._Endereco.Numero = int.Parse(txtPesquisaNumero.Text);
-
-                ctx.SaveChanges();
-                dtgMeusClientes.ItemsSource = ctx.tblClientes.ToList();
-                lblQuantidadeClientes.Content = ctx.tblClientes.Count();
-
-                txtExcluir.Text = "";
-                txtID.Text = "";
-
-                txtPesquisaNome.Text = "";
-                txtPesquisaCPF.Text = "";
-                txtPesquisaRua.Text = "";
-                txtPesquisaComplemento.Text = "";
-                txtPesquisaNumero.Text = "";
-
+                SalvaEdicao();
             }
             catch
             {
@@ -174,7 +147,62 @@ namespace WpfView
             }
         }
 
+        //Botão cancelar na área de edição
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            CancelarEdit();
+        }
+
+
+        //_____________________________________________
+        //Métodos: Cliente
+        //_____________________________________________
+        public void SalvaEdicao()
+        {
+            selecionado.Nome = txtPesquisaNome.Text;
+            selecionado.Cpf = txtPesquisaCPF.Text;
+            selecionado._Endereco.Rua = txtPesquisaRua.Text;
+            selecionado._Endereco.Complemento = txtPesquisaComplemento.Text;
+            selecionado._Endereco.Numero = int.Parse(txtPesquisaNumero.Text);
+                        
+            ctx.SaveChanges();
+            dtgMeusClientes.ItemsSource = ctx.tblClientes.ToList();
+            lblQuantidadeClientes.Content = ctx.tblClientes.Count();
+
+            CancelarEdit();
+        }
+
+        public void ExcluirCliente()
+        {
+            ClienteController cc = new ClienteController();
+            cc.ExcluirCliente(selecionado.PessoaID);
+
+            txtID.Text = "";
+            txtExcluir.Text = "";
+            dtgMeusClientes.ItemsSource = ctx.tblClientes.ToList();
+            lblQuantidadeClientes.Content = ctx.tblClientes.Count();
+        }
+
+        public void TabEditar()
+        {
+            Tab_Editar.IsSelected = true;
+
+            txtPesquisaNome.Text = selecionado.Nome;
+            txtPesquisaCPF.Text = selecionado.Cpf;
+            txtPesquisaRua.Text = selecionado._Endereco.Rua;
+            txtPesquisaComplemento.Text = selecionado._Endereco.Complemento;
+            txtPesquisaNumero.Text = selecionado._Endereco.Numero.ToString();
+        }
+
+        public void AtualizarTela()
+        {
+            dtgMeusClientes.ItemsSource = ctx.tblClientes.ToList();
+            txtID.Text = "";
+            txtExcluir.Text = "";
+            lblQuantidadeClientes.Content = ctx.tblClientes.Count();
+        }
+
+        public void CancelarEdit()
         {
             txtExcluir.Text = "";
             txtID.Text = "";
@@ -185,7 +213,9 @@ namespace WpfView
             txtPesquisaComplemento.Text = "";
             txtPesquisaNumero.Text = "";
 
-            Tab_Editar.IsSelected = true;
+            MessageBox.Show("Retornando a lista de clientes");
+
+            Tab_Lista.IsSelected = true;
         }
     }
 }
