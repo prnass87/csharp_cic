@@ -1,4 +1,5 @@
 ﻿using Models;
+using Models.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,17 +10,14 @@ namespace Controllers
 {
     public class MotoController
     {
-        static List<Moto> MinhasMotos = new List<Moto>();
-        static int ultimoID = 0;
 
         public void SalvarMoto(Moto moto)
         {
-            int id = ultimoID + 1;
-            ultimoID = 1;
-            moto.MotoID = id;
-            MinhasMotos.Add(moto);
+            Contexto ctx = new Contexto();
+            ctx.tblMotos.Add(moto);
+            ctx.SaveChanges();
         }
-
+        /*
         public Moto PesquisarPorModelo(string nome)
         {
             var m = from x in MinhasMotos
@@ -72,5 +70,6 @@ namespace Controllers
             MotoEditar.Status = MotoEditada.Status;
 
         }
+        */
     }
 }

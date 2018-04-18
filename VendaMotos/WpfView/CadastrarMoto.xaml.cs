@@ -22,9 +22,6 @@ namespace WpfView
     /// </summary>
     public partial class CadastrarMoto : Window
     {
-
-        Contexto ctx = new Contexto();
-
         public CadastrarMoto()
         {
             InitializeComponent();
@@ -32,10 +29,52 @@ namespace WpfView
 
         private void btnAdicionar_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                CadastroMoto();
+            }
+            catch
+            {
+                MessageBox.Show("Você precisa preencher todos os campos primeiro!!");
+            }
         }
 
         private void btnLimpar_Click(object sender, RoutedEventArgs e)
+        {
+            Limpar();
+        }
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        //_____________________________________________
+        //Métodos: Moto
+        //_____________________________________________
+        public void CadastroMoto()
+        {
+            Moto NovaMoto = new Moto();
+
+            NovaMoto.Marca = txtMarca.Text;
+            NovaMoto.Modelo = txtModelo.Text;
+            NovaMoto.Cilindrada = txtCilindrada.Text;
+            NovaMoto.Ano = txtAnoFabric.Text;
+            NovaMoto.Cor = txtCor.Text;
+            NovaMoto.Placa = txtPlaca.Text;
+            NovaMoto.Valor = double.Parse(txtValor.Text);
+            NovaMoto.Status = txtStatus.Text;
+
+            MotoController mc = new MotoController();
+            mc.SalvarMoto(NovaMoto);
+            MessageBox.Show("Moto cadastrada com sucesso!");
+            Limpar();
+        }
+
+        //_____________________________________________
+        //Métodos: Limpar
+        //_____________________________________________
+        public void Limpar()
         {
             txtMarca.Text = "";
             txtModelo.Text = "";
@@ -45,11 +84,6 @@ namespace WpfView
             txtPlaca.Text = "";
             txtValor.Text = "";
             txtStatus.Text = "";
-        }
-
-        private void btnVoltar_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
         }
     }
 }

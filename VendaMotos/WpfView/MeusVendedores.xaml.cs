@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,25 @@ namespace WpfView
     /// </summary>
     public partial class MeusVendedores : Window
     {
+        Contexto ctx = new Contexto();
+
         public MeusVendedores()
         {
             InitializeComponent();
+            try
+            {
+                dtgMeusVendedores.ItemsSource = ctx.tblVendedores.ToList();
+            }
+            catch (Exception)
+            {
+                
+            }
+            lblQuantidadeVendedores.Content = ctx.tblVendedores.Count();
+        }
+        private void btnNovoVendedor_Click_1(object sender, RoutedEventArgs e)
+        {
+            CadastrarVendedor nova_tela = new CadastrarVendedor();
+            nova_tela.Show();
         }
 
         private void btnAtualizar_Click(object sender, RoutedEventArgs e)
@@ -61,10 +78,6 @@ namespace WpfView
 
         }
 
-        private void btnNovoVendedor_Click_1(object sender, RoutedEventArgs e)
-        {
-            CadastrarVendedor nova_tela = new CadastrarVendedor();
-            nova_tela.Show();
-        }
+
     }
 }

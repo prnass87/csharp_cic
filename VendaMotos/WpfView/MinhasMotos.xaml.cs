@@ -30,12 +30,12 @@ namespace WpfView
             nova_tela.Show();
         }
 
-        private void btnExcluir_Click(object sender, RoutedEventArgs e)
+        private void dtgMinhasMotos_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 
         }
 
-        private void dtgMinhasMotos_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void btnExcluir_Click(object sender, RoutedEventArgs e)
         {
 
         }
