@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseController.cs" />
     <Compile Include="ClienteController.cs" />
     <Compile Include="EnderecoController.cs" />
     <Compile Include="MotoController.cs" />

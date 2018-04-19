@@ -50,6 +50,50 @@ namespace WpfView
         //Pega o cliente selecionado no datagrid
         private void dtgMeusClientes_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            dtgAtualiza();
+        }
+
+        //Excluir cliente (ERRO)
+        private void btnExcluir_Click(object sender, RoutedEventArgs e)
+        {
+            ExcluirCliente();
+        }
+        
+        //Altera para a tela de edição
+        private void btnEditar_Click(object sender, RoutedEventArgs e)
+        {
+            TabEditar();
+        }
+
+        //Atualiza grid
+        private void btnAtualizar_Click(object sender, RoutedEventArgs e)
+        {
+            AtualizarTela();
+        }
+
+        //Pesquisando clientes por nome.
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+            BuscaCliente();
+        }
+
+        private void btnSalvar_Edicao_Click(object sender, RoutedEventArgs e)
+        {
+            SalvaEdicao();
+        }
+
+        //Botão cancelar na área de edição
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            CancelarEdit();
+        }
+
+
+        //_____________________________________________
+        //Métodos: Cliente
+        //_____________________________________________
+        public void dtgAtualiza()
+        {
             try
             {
                 selecionado = (Cliente)dtgMeusClientes.SelectedItem;
@@ -62,12 +106,38 @@ namespace WpfView
             }
         }
 
-        //Excluir cliente (ERRO)
-        private void btnExcluir_Click(object sender, RoutedEventArgs e)
+        public void SalvaEdicao()
         {
+            ClienteController cc = new ClienteController();
             try
             {
-                ClienteController cc = new ClienteController();
+                selecionado.Nome = txtPesquisaNome.Text;
+                selecionado.Cpf = txtPesquisaCPF.Text;
+                selecionado._Endereco.Rua = txtPesquisaRua.Text;
+                selecionado._Endereco.Complemento = txtPesquisaComplemento.Text;
+                selecionado._Endereco.Numero = int.Parse(txtPesquisaNumero.Text);
+
+                cc.EditarCliente(selecionado.PessoaID, selecionado);
+
+                dtgMeusClientes.ItemsSource = ctx.tblClientes.ToList();
+                lblQuantidadeClientes.Content = ctx.tblClientes.Count();
+
+                CancelarEdit();
+            }
+            catch
+            {
+                MessageBox.Show("Selecione um carrinho para editar!!");
+            }
+
+        }
+
+        public void ExcluirCliente()
+        {
+            ClienteController cc = new ClienteController();
+
+            try
+            {
+                
                 selecionado = cc.PesquisarPorID(selecionado.PessoaID);
             }
             catch (Exception)
@@ -81,33 +151,16 @@ namespace WpfView
             }
             else
             {
-                ExcluirCliente();
+                cc.ExcluirCliente(selecionado.PessoaID);
+
+                txtID.Text = "";
+                txtExcluir.Text = "";
+                dtgMeusClientes.ItemsSource = ctx.tblClientes.ToList();
+                lblQuantidadeClientes.Content = ctx.tblClientes.Count();
             }
-        }
-        
-        //Altera para a tela de edição
-        private void btnEditar_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                TabEditar();
-            }
-            catch
-            {
-                MessageBox.Show("Nenhum carrinho selecionado!!");
-            }
-            txtExcluir.Text = "";
-            txtID.Text = "";
         }
 
-        //Atualiza grid
-        private void btnAtualizar_Click(object sender, RoutedEventArgs e)
-        {
-            AtualizarTela();
-        }
-
-        //Pesquisando clientes por nome.
-        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        public void BuscaCliente()
         {
             List<Cliente> selecao = new List<Cliente>();
 
@@ -119,7 +172,8 @@ namespace WpfView
                 if (selecionado == null)
                 {
                     return;
-                } else
+                }
+                else
                 {
                     txtID.Text = selecionado.PessoaID.ToString();
                     selecao.Add(selecionado);
@@ -135,63 +189,25 @@ namespace WpfView
             txtID.Text = "";
         }
 
-        private void btnSalvar_Edicao_Click(object sender, RoutedEventArgs e)
+        public void TabEditar()
         {
             try
             {
-                SalvaEdicao();
+                txtExcluir.Text = "";
+                txtID.Text = "";
+                Tab_Editar.IsSelected = true;
+
+                txtPesquisaNome.Text = selecionado.Nome;
+                txtPesquisaCPF.Text = selecionado.Cpf;
+                txtPesquisaRua.Text = selecionado._Endereco.Rua;
+                txtPesquisaComplemento.Text = selecionado._Endereco.Complemento;
+                txtPesquisaNumero.Text = selecionado._Endereco.Numero.ToString();
             }
             catch
             {
-                MessageBox.Show("Selecione um carrinho para editar!!");
+                MessageBox.Show("Nenhum carrinho selecionado!!");
             }
-        }
 
-        //Botão cancelar na área de edição
-        private void btnCancelar_Click(object sender, RoutedEventArgs e)
-        {
-            CancelarEdit();
-        }
-
-
-        //_____________________________________________
-        //Métodos: Cliente
-        //_____________________________________________
-        public void SalvaEdicao()
-        {
-            selecionado.Nome = txtPesquisaNome.Text;
-            selecionado.Cpf = txtPesquisaCPF.Text;
-            selecionado._Endereco.Rua = txtPesquisaRua.Text;
-            selecionado._Endereco.Complemento = txtPesquisaComplemento.Text;
-            selecionado._Endereco.Numero = int.Parse(txtPesquisaNumero.Text);
-                        
-            ctx.SaveChanges();
-            dtgMeusClientes.ItemsSource = ctx.tblClientes.ToList();
-            lblQuantidadeClientes.Content = ctx.tblClientes.Count();
-
-            CancelarEdit();
-        }
-
-        public void ExcluirCliente()
-        {
-            ClienteController cc = new ClienteController();
-            cc.ExcluirCliente(selecionado.PessoaID);
-
-            txtID.Text = "";
-            txtExcluir.Text = "";
-            dtgMeusClientes.ItemsSource = ctx.tblClientes.ToList();
-            lblQuantidadeClientes.Content = ctx.tblClientes.Count();
-        }
-
-        public void TabEditar()
-        {
-            Tab_Editar.IsSelected = true;
-
-            txtPesquisaNome.Text = selecionado.Nome;
-            txtPesquisaCPF.Text = selecionado.Cpf;
-            txtPesquisaRua.Text = selecionado._Endereco.Rua;
-            txtPesquisaComplemento.Text = selecionado._Endereco.Complemento;
-            txtPesquisaNumero.Text = selecionado._Endereco.Numero.ToString();
         }
 
         public void AtualizarTela()

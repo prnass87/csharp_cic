@@ -8,34 +8,43 @@ using System.Threading.Tasks;
 
 namespace Controllers
 {
-    public class ClienteController
+    public class ClienteController : BaseController
     {
-
+        
         public void SalvarCliente(Cliente cliente)
         {
-            Contexto ctx = new Contexto();
-            ctx.tblClientes.Add(cliente);
-            ctx.SaveChanges();
+            Ctx.tblClientes.Add(cliente);
+            Ctx.SaveChanges();
         }
 
         public void ExcluirCliente(int idCliente)
         {
-            Contexto ctx = new Contexto();
             Cliente cli = PesquisarPorID(idCliente);
 
             if (cli != null)
             {
-                ctx.Entry(cli).State = System.Data.Entity.EntityState.Deleted;
-                //ctx.tblClientes.Remove(cli);
-                ctx.SaveChanges();
+                Ctx.Entry(cli).State = System.Data.Entity.EntityState.Deleted;
+                Ctx.SaveChanges();
             } 
+        }
+
+        public void EditarCliente(int idClienteEditar, Cliente ClienteEditado)
+        {
+            Cliente ClienteEditar = PesquisarPorID(idClienteEditar);
+
+            ClienteEditar.Nome = ClienteEditado.Nome;
+            ClienteEditar.Cpf = ClienteEditado.Cpf;
+            ClienteEditar._Endereco.Rua = ClienteEditado._Endereco.Rua;
+            ClienteEditar._Endereco.Complemento = ClienteEditado._Endereco.Complemento;
+            ClienteEditar._Endereco.Numero = ClienteEditado._Endereco.Numero;
+
+            Ctx.Entry(ClienteEditar).State = System.Data.Entity.EntityState.Modified;
+            Ctx.SaveChanges();
         }
 
         public Cliente PesquisarPorNome(string nome)
         {
-            Contexto ctx = new Contexto();
-
-            var cli = (from c in ctx.tblClientes
+            var cli = (from c in Ctx.tblClientes
                            where c.Nome.Contains(nome)
                            select c).First();
 
@@ -47,8 +56,7 @@ namespace Controllers
 
         public Cliente PesquisarPorID(int idCliente)
         {
-            Contexto ctx = new Contexto();
-            var cli = from x in ctx.tblClientes
+            var cli = from x in Ctx.tblClientes
                     where x.PessoaID.Equals(idCliente)
                     select x;
 
@@ -57,44 +65,6 @@ namespace Controllers
             else
                 return null;
         }
-
-        /*
-        
-        
-
-
-        
-        public Cliente PesquisarPorNome(string nome)
-        {
-            var c = from x in MeusClientes
-                    where x.Nome.ToLower().Contains(nome.Trim().ToLower())
-                    select x;
-
-            if (c != null)
-                return c.FirstOrDefault();
-            else
-                return null;
-        }
-
-
-
-        public List<Cliente> ListarClientes()
-        {
-            return MeusClientes;
-        }
-
-        public void EditarCliente(int idClienteEditar, Cliente ClienteEditado)
-        {
-            Cliente ClienteEditar = PesquisarPorID(idClienteEditar);
-
-            ClienteEditar.Nome = ClienteEditado.Nome;
-            ClienteEditar.Cpf = ClienteEditado.Cpf;
-        }
-
-
-
-
-        */
 
     }
 }
