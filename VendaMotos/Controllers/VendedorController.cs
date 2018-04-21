@@ -8,58 +8,64 @@ using System.Threading.Tasks;
 
 namespace Controllers
 {
-     public class VendedorController
+     public class VendedorController : BaseController
     {
         
 
         public void SalvarVendedor(Vendedor vendedor)
         {
-            Contexto ctx = new Contexto();
-            ctx.tblVendedores.Add(vendedor);
-            ctx.SaveChanges();
+            Ctx.tblVendedores.Add(vendedor);
+            Ctx.SaveChanges();
 
         }
-        /*
-          public Vendedor PesquisarPorNome(string nome)
-          {
-                var v = from x in MeusVendedores
-                        where x.Nome.ToLower().Contains(nome.Trim().ToLower())
-                        select x;
 
-                if (v != null)
-                    return v.FirstOrDefault();
-                else
-                    return null;
+        public void ExcluirVendedor(int idVendedor)
+        {
+            Vendedor ven = PesquisarPorID(idVendedor);
+
+            if (ven != null)
+            {
+                Ctx.Entry(ven).State = System.Data.Entity.EntityState.Deleted;
+                Ctx.SaveChanges();
             }
-
-        public Vendedor PesquisarPorID(int idVendedor)
-        {
-            var v = from x in MeusVendedores
-                    where x.PessoaID.Equals(idVendedor)
-                    select x;
-
-            if (v != null)
-                return v.FirstOrDefault();
-            else
-                return null;
         }
-        public void excluirVendedor(int idVendedor)
-        { 
-            Vendedor v = PesquisarPorID(idVendedor);
-            if (v != null)
-                MeusVendedores.Remove(v);
-         }
-        public List<Vendedor> ListarVendedores()
-        {
-            return MeusVendedores;
-        }
+
         public void EditarVendedor(int idVendedorEditar, Vendedor VendedorEditado)
         {
             Vendedor VendedorEditar = PesquisarPorID(idVendedorEditar);
 
             VendedorEditar.Nome = VendedorEditado.Nome;
             VendedorEditar.Cpf = VendedorEditado.Cpf;
+            VendedorEditar._Endereco.Rua = VendedorEditado._Endereco.Rua;
+            VendedorEditar._Endereco.Complemento = VendedorEditado._Endereco.Complemento;
+            VendedorEditar._Endereco.Numero = VendedorEditado._Endereco.Numero;
+
+            Ctx.Entry(VendedorEditar).State = System.Data.Entity.EntityState.Modified;
+            Ctx.SaveChanges();
         }
-        */
+
+        public Vendedor PesquisarPorNome(string nome)
+        {
+            var ven = (from v in Ctx.tblVendedores
+                       where v.Nome.Contains(nome)
+                       select v).First();
+
+            if (ven != null)
+                return ven;
+            else
+                return null;
+        }
+
+        public Vendedor PesquisarPorID(int idVendedor)
+        {
+            var ven = from x in Ctx.tblVendedores
+                      where x.PessoaID.Equals(idVendedor)
+                      select x;
+
+            if (ven != null)
+                return ven.FirstOrDefault();
+            else
+                return null;
+        }
     }
 }

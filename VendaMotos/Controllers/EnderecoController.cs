@@ -17,29 +17,6 @@ namespace Controllers
             ctx.tblEnderecos.Add(endereco);
             ctx.SaveChanges();
         }
-        /*
-        public Endereco PesquisarPorId(int idEndereco)
-        {
-            var e = from x in EnderecosCadastrados
-                    where x.EnderecoID.Equals(idEndereco)
-                    select x;
-            if (e != null)
-                return e.FirstOrDefault();
-            else
-                return null;
-        }
 
-        public void ExcluirEndereco(int idEndereco)
-        {
-            Endereco end = PesquisarPorId(idEndereco);
-            if (end != null)
-                EnderecosCadastrados.Remove(end);
-        }
-
-        public List<Endereco> ListarEnderecos()
-        {
-            return EnderecosCadastrados;
-        }
-        */
     }
 }

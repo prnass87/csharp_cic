@@ -8,68 +8,66 @@ using System.Threading.Tasks;
 
 namespace Controllers
 {
-    public class MotoController
+    public class MotoController : BaseController
     {
 
         public void SalvarMoto(Moto moto)
         {
-            Contexto ctx = new Contexto();
-            ctx.tblMotos.Add(moto);
-            ctx.SaveChanges();
+            Ctx.tblMotos.Add(moto);
+            Ctx.SaveChanges();
         }
-        /*
-        public Moto PesquisarPorModelo(string nome)
-        {
-            var m = from x in MinhasMotos
-                    where x.Modelo.ToLower().Contains(nome.Trim().ToLower())
-                    select x;
 
-            if (m != null)
-                return m.FirstOrDefault();
+        public void ExcluirMoto(int idMoto)
+        {
+            Moto mot = PesquisarPorID(idMoto);
+
+            if (mot != null)
+            {
+                Ctx.Entry(mot).State = System.Data.Entity.EntityState.Deleted;
+                Ctx.SaveChanges();
+            }
+        }
+
+        public void EditarMoto(int idMotoEditar, Moto MotoEditado)
+        {
+            Moto MotoEditar = PesquisarPorID(idMotoEditar);
+
+            MotoEditar.Marca = MotoEditado.Marca;
+            MotoEditar.Modelo = MotoEditado.Modelo;
+            MotoEditar.Cilindrada = MotoEditado.Cilindrada;
+            MotoEditar.Ano = MotoEditado.Ano;
+            MotoEditar.Cor = MotoEditado.Cor;
+            MotoEditar.Placa = MotoEditado.Placa;
+            MotoEditar.Valor = MotoEditado.Valor;
+            MotoEditar.Status = MotoEditado.Status;
+
+
+            Ctx.Entry(MotoEditar).State = System.Data.Entity.EntityState.Modified;
+            Ctx.SaveChanges();
+        }
+
+        public Moto PesquisarPorModelo(string modelo)
+        {
+            var mot = (from m in Ctx.tblMotos
+                       where m.Modelo.Contains(modelo)
+                       select m).First();
+
+            if (mot != null)
+                return mot;
             else
                 return null;
         }
 
         public Moto PesquisarPorID(int idMoto)
         {
-            var m = from x in MinhasMotos
-                    where x.MotoID.Equals(idMoto)
-                    select x;
+            var mot = from x in Ctx.tblMotos
+                      where x.MotoID.Equals(idMoto)
+                      select x;
 
-            if (m != null)
-                return m.FirstOrDefault();
+            if (mot != null)
+                return mot.FirstOrDefault();
             else
                 return null;
         }
-
-        public void ExcluirMoto(int idMoto)
-        {
-            Moto mto = PesquisarPorID(idMoto);
-            if (mto != null)
-            {
-                MinhasMotos.Remove(mto);
-            }
-        }
-
-        public List<Moto> ListarMotos()
-        {
-            return MinhasMotos;
-        }
-
-        public void EditarMoto(int idMotoEditar, Moto MotoEditada)
-        {
-            Moto MotoEditar = PesquisarPorID(idMotoEditar);
-
-            MotoEditar.Marca = MotoEditada.Marca;
-            MotoEditar.Modelo = MotoEditada.Modelo;
-            MotoEditar.Cilindrada = MotoEditada.Cilindrada;
-            MotoEditar.Ano = MotoEditada.Ano;
-            MotoEditar.Cor = MotoEditada.Cor;
-            MotoEditar.Placa = MotoEditada.Placa;
-            MotoEditar.Valor = MotoEditada.Valor;
-            MotoEditar.Status = MotoEditada.Status;
-
-        }
-        */
     }
 }

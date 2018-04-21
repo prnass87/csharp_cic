@@ -53,7 +53,7 @@ namespace WpfView
             dtgAtualiza();
         }
 
-        //Excluir cliente (ERRO)
+        //Excluir cliente
         private void btnExcluir_Click(object sender, RoutedEventArgs e)
         {
             ExcluirCliente();
@@ -126,7 +126,7 @@ namespace WpfView
             }
             catch
             {
-                MessageBox.Show("Selecione um carrinho para editar!!");
+                MessageBox.Show("Selecione um cliente para editar!!");
             }
 
         }
@@ -181,7 +181,7 @@ namespace WpfView
             }
             catch
             {
-                MessageBox.Show("Carrinho não encontrado!!");
+                MessageBox.Show("Cliente não encontrado!!");
             }
 
             dtgMeusClientes.ItemsSource = selecao.ToList();
@@ -205,7 +205,7 @@ namespace WpfView
             }
             catch
             {
-                MessageBox.Show("Nenhum carrinho selecionado!!");
+                MessageBox.Show("Nenhum cliente selecionado!!");
             }
 
         }
