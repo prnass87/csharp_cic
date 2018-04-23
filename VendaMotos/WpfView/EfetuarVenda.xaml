@@ -11,10 +11,10 @@
         <ComboBox x:Name="cbxCliente" DisplayMemberPath="Nome" SelectedValuePath="PessoaID" HorizontalAlignment="Left" Height="22" Margin="161,108,0,0" VerticalAlignment="Top" Width="337" Foreground="Black" OpacityMask="Black"/>
         
         <Label Content="VENDEDOR:" HorizontalAlignment="Left" Margin="56,156,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="75" Height="26"/>
-        <ComboBox x:Name="cbxVendedor" HorizontalAlignment="Left" Height="22" Margin="161,159,0,0" VerticalAlignment="Top" Width="337" Foreground="Black" OpacityMask="Black"/>
+        <ComboBox x:Name="cbxVendedor" DisplayMemberPath="Nome" HorizontalAlignment="Left" Height="22" Margin="161,159,0,0" VerticalAlignment="Top" Width="337" Foreground="Black" OpacityMask="Black"/>
 
         <Label Content="MOTO" HorizontalAlignment="Left" Margin="56,206,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="68" Height="25"/>
-        <ComboBox x:Name="cbxMoto" HorizontalAlignment="Left" Height="22" Margin="161,209,0,0" VerticalAlignment="Top" Width="337" Foreground="Black" OpacityMask="Black"/>
+        <ComboBox x:Name="cbxMoto" DisplayMemberPath="Modelo" HorizontalAlignment="Left" Height="22" Margin="161,209,0,0" VerticalAlignment="Top" Width="337" Foreground="Black" OpacityMask="Black"/>
         <Button x:Name="btnAdicionar" Content="Adicionar" HorizontalAlignment="Left" Margin="116,356,0,0" VerticalAlignment="Top" Width="105" Height="24" OpacityMask="Black" Foreground="Black" Background="#FFA0CDCB" BorderBrush="#FFA0CDCB" Click="btnAdicionar_Click"/>
         
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="EFETUAR VENDA" VerticalAlignment="Center" Height="38" Width="522" IsHitTestVisible="False" FontSize="24" TextAlignment="Center" FontWeight="Bold" Background="#FFA0CDCB" RenderTransformOrigin="0.5,0.5" Margin="10,27,10,325">

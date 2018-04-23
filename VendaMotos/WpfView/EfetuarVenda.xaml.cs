@@ -60,16 +60,17 @@ namespace WpfView
         public void GerarVenda()
         {
             Venda NovaVenda = new Venda();
-            Console.WriteLine(((Cliente)cbxCliente.SelectedItem).Nome);
-            /*
-            NovaVenda.ClienteID = cbxCliente;
-            NovaVenda.VendedorID = cbxVendedor;
-            NovaVenda.MotoID = cbxMoto;
+
+            NovaVenda.DataVenda = DateTime.Today;
+            NovaVenda.ClienteID = ((Cliente)cbxCliente.SelectedItem).PessoaID;
+            NovaVenda.VendedorID = ((Vendedor)cbxVendedor.SelectedItem).PessoaID;
+            NovaVenda.MotoID = ((Moto)cbxMoto.SelectedItem).MotoID;
+            
 
             VendaController vc = new VendaController();
             vc.SalvaVenda(NovaVenda);
             MessageBox.Show("Venda realizada com sucesso!");
-            */
+            Limpar();
         }
 
         public void Limpar()
