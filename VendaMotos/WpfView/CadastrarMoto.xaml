@@ -17,12 +17,12 @@
         <Label Content="Status" HorizontalAlignment="Left" Margin="154,282,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="67" Height="25"/>
 
         <TextBox x:Name="txtMarca" HorizontalAlignment="Left" Height="22" Margin="250,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black"/>
-        <TextBox x:Name="txtModelo" HorizontalAlignment="Left" Height="22" Margin="250,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black" MaxLength="4"/>
+        <TextBox x:Name="txtModelo" HorizontalAlignment="Left" Height="22" Margin="250,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black"/>
         <TextBox x:Name="txtCilindrada" HorizontalAlignment="Left" Height="22" Margin="250,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black"/>
         <TextBox x:Name="txtAnoFabric" HorizontalAlignment="Left" Height="22" Margin="250,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black"/>
         <TextBox x:Name="txtCor" HorizontalAlignment="Left" Height="23" Margin="250,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black"/>
         <TextBox x:Name="txtPlaca" HorizontalAlignment="Left" Height="22" Margin="250,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black"/>
-        <TextBox x:Name="txtValor" HorizontalAlignment="Left" Height="22" Margin="250,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black" MaxLength="4"/>
+        <TextBox x:Name="txtValor" HorizontalAlignment="Left" Height="22" Margin="250,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black"/>
         <TextBox x:Name="txtStatus" HorizontalAlignment="Left" Height="22" Margin="250,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Foreground="Black" OpacityMask="Black"/>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="CADASTRAR MOTO" VerticalAlignment="Center" Height="38" Width="522" IsHitTestVisible="False" FontSize="24" TextAlignment="Center" FontWeight="Bold" Background="#FFA0CDCB" RenderTransformOrigin="0.5,0.5" Margin="10,27,10,325">
             <TextBlock.RenderTransform>

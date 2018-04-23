@@ -16,7 +16,14 @@
                         <ColumnDefinition Width="113*"/>
                         <ColumnDefinition Width="403*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid AutoGenerateColumns="True" x:Name="dtgMeusClientes" HorizontalAlignment="Left" VerticalAlignment="Top" Height="232" Width="516" Margin="0,66,0,0" MouseDoubleClick="dtgMeusClientes_MouseDoubleClick" IsTextSearchEnabled="True" Grid.ColumnSpan="2">
+                    <DataGrid AutoGenerateColumns="False" x:Name="dtgMeusClientes" HorizontalAlignment="Left" VerticalAlignment="Top" Height="232" Width="516" Margin="0,66,0,0" MouseDoubleClick="dtgMeusClientes_MouseDoubleClick" IsTextSearchEnabled="True" Grid.ColumnSpan="2" EnableRowVirtualization="True" ItemsSource="{Binding ObjectList}"  RowDetailsVisibilityMode="VisibleWhenSelected">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="NOME" Binding="{Binding Nome}" />
+                            <DataGridTextColumn Header="CPF" Binding="{Binding Cpf}" />
+                            <DataGridTextColumn Header="RUA" Binding="{Binding _Endereco.Rua}"/>
+                            <DataGridTextColumn Header="COMPLEMENTO" Binding="{Binding _Endereco.Complemento}"/>
+                            <DataGridTextColumn Header="NUMERO" Binding="{Binding _Endereco.Numero}"/>
+                        </DataGrid.Columns>
                     </DataGrid>
                     <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="12.426,40,0,0" VerticalAlignment="Top" Width="91" Background="#FFA0CDCB" Click="btnExcluir_Click" Grid.Column="1"/>
                     <Button x:Name="btnNovoCliente" Content="Novo Cliente" HorizontalAlignment="Left" Margin="283.426,40,0,0" VerticalAlignment="Top" Width="91" Background="#FFA0CDCB" Click="btnNovoCliente_Click" Grid.Column="1"/>

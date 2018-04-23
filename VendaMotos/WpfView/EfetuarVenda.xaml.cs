@@ -65,8 +65,9 @@ namespace WpfView
             NovaVenda.ClienteID = ((Cliente)cbxCliente.SelectedItem).PessoaID;
             NovaVenda.VendedorID = ((Vendedor)cbxVendedor.SelectedItem).PessoaID;
             NovaVenda.MotoID = ((Moto)cbxMoto.SelectedItem).MotoID;
-            
 
+
+            //NovaVenda._Moto.Status = "VENDIDA";
             VendaController vc = new VendaController();
             vc.SalvaVenda(NovaVenda);
             MessageBox.Show("Venda realizada com sucesso!");

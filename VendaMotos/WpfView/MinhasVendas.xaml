@@ -17,7 +17,16 @@
                         <ColumnDefinition Width="113*"/>
                         <ColumnDefinition Width="403*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid AutoGenerateColumns="True" x:Name="dtgMinhasVendas" HorizontalAlignment="Left" VerticalAlignment="Top" Height="232" Width="516" Margin="0,66,0,0" MouseDoubleClick="dtgMinhasVendas_MouseDoubleClick" IsTextSearchEnabled="True" Grid.ColumnSpan="2">
+                    <DataGrid AutoGenerateColumns="False" x:Name="dtgMinhasVendas" HorizontalAlignment="Left" VerticalAlignment="Top" Height="232" Width="516" Margin="0,66,0,0" MouseDoubleClick="dtgMinhasVendas_MouseDoubleClick" IsTextSearchEnabled="True" Grid.ColumnSpan="2" EnableRowVirtualization="True" ItemsSource="{Binding ObjectList}"  RowDetailsVisibilityMode="VisibleWhenSelected">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="COD" Binding="{Binding VendaID}" />
+                            <DataGridTextColumn Header="DATA" Binding="{Binding DataVenda}" />
+                            <DataGridTextColumn Header="NOME CLIENTE" Binding="{Binding _Cliente.Nome}"/>
+                            <DataGridTextColumn Header="CPF CLIENTE" Binding="{Binding _Cliente.Cpf}"/>
+                            <DataGridTextColumn Header="VENDEDOR" Binding="{Binding _Vendedor.Nome}"/>
+                            <DataGridTextColumn Header="MODELO" Binding="{Binding _Moto.Modelo}"/>
+                            <DataGridTextColumn Header="VALOR" Binding="{Binding _Moto.Valor}"/>
+                        </DataGrid.Columns>
                     </DataGrid>
                     <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="12.426,40,0,0" VerticalAlignment="Top" Width="91" Background="#FFA0CDCB" Click="btnExcluir_Click" Grid.Column="1"/>
                     <Button x:Name="btnNovaVenda" Content="Nova Venda" HorizontalAlignment="Left" Margin="283.426,40,0,0" VerticalAlignment="Top" Width="91" Background="#FFA0CDCB" Click="btnNovaVenda_Click" Grid.Column="1"/>

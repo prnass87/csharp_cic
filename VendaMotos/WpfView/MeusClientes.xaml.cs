@@ -32,6 +32,7 @@ namespace WpfView
             try
             {
                 dtgMeusClientes.ItemsSource = ctx.tblClientes.ToList();
+                //dtgMeusClientes.ItemsSource = ctx.tblEnderecos.ToList();
             }
             catch (Exception)
             {
@@ -77,6 +78,7 @@ namespace WpfView
             BuscaCliente();
         }
 
+        //Salva a edição dos clientes
         private void btnSalvar_Edicao_Click(object sender, RoutedEventArgs e)
         {
             SalvaEdicao();

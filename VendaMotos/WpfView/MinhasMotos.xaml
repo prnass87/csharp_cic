@@ -12,7 +12,17 @@
         <TabControl HorizontalAlignment="Left" Height="326" Margin="10,53,0,0" VerticalAlignment="Top" Width="522">
             <TabItem x:Name="Tab_Lista" Header="Minhas Motos">
                 <Grid Background="#FF0D2D44">
-                    <DataGrid AutoGenerateColumns="True" x:Name="dtgMinhasMotos" HorizontalAlignment="Left" VerticalAlignment="Top" Height="232" Width="516" Margin="0,66,0,0" MouseDoubleClick="dtgMinhasMotos_MouseDoubleClick" IsTextSearchEnabled="True">
+                    <DataGrid AutoGenerateColumns="False" x:Name="dtgMinhasMotos" HorizontalAlignment="Left" VerticalAlignment="Top" Height="232" Width="516" Margin="0,66,0,0" MouseDoubleClick="dtgMinhasMotos_MouseDoubleClick" IsTextSearchEnabled="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="MARCA" Binding="{Binding Marca}" />
+                            <DataGridTextColumn Header="MODELO" Binding="{Binding Modelo}" />
+                            <DataGridTextColumn Header="CILINDRADA" Binding="{Binding Cilindrada}"/>
+                            <DataGridTextColumn Header="ANO" Binding="{Binding Ano}"/>
+                            <DataGridTextColumn Header="COR" Binding="{Binding Cor}"/>
+                            <DataGridTextColumn Header="PLACA" Binding="{Binding Placa}"/>
+                            <DataGridTextColumn Header="VALOR" Binding="{Binding Valor}"/>
+                            <DataGridTextColumn Header="STATUS" Binding="{Binding Status}"/>
+                        </DataGrid.Columns>
                     </DataGrid>
                     <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="125,40,0,0" VerticalAlignment="Top" Width="91" Background="#FFA0CDCB" Click="btnExcluir_Click"/>
                     <Button x:Name="btnNovaMoto" Content="Nova Moto" HorizontalAlignment="Left" Margin="396,40,0,0" VerticalAlignment="Top" Width="91" Background="#FFA0CDCB" Click="btnNovaMoto_Click"/>
