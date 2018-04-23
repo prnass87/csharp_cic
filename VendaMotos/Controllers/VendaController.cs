@@ -7,18 +7,13 @@ using Models;
 
 namespace Controllers
 {
-    public class VendaController
+    public class VendaController : BaseController
     {
-        static List<Venda> MinhasVendas = new List<Venda>();
-        static int ultimoID = 0;
 
-        public void GerarVenda(Venda venda)
+        public void SalvaVenda(Venda venda)
         {
-            int id = ultimoID + 1;
-            ultimoID = id;
-
-            venda.VendaID = id;
-            MinhasVendas.Add(venda);
+            Ctx.tblVendas.Add(venda);
+            Ctx.SaveChanges();
         }
     }
 }

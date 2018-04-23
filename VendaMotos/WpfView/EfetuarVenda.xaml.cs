@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Models.DAL;
 
 namespace WpfView
 {
@@ -21,26 +22,61 @@ namespace WpfView
     /// </summary>
     public partial class EfetuarVenda : Window
     {
+        Contexto ctx = new Contexto();
+
         public EfetuarVenda()
         {
             InitializeComponent();
+            cbxCliente.ItemsSource = ctx.tblClientes.ToList();          
+            cbxVendedor.ItemsSource = ctx.tblVendedores.ToList();
+            cbxMoto.ItemsSource = ctx.tblMotos.ToList();
         }
 
         private void btnAdicionar_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                GerarVenda();
+            }
+            catch
+            {
+                MessageBox.Show("Você precisa preencher todos os campos primeiro!!");
+            }
         }
 
         private void btnLimpar_Click(object sender, RoutedEventArgs e)
         {
-            cbxCliente.Text = "";
-            cbxMoto.Text = "";
-            cbxVendedor.Text = "";
+            Limpar();
         }
 
         private void btnVoltar_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        //_____________________________________________
+        //Métodos: Vendas
+        //_____________________________________________
+        public void GerarVenda()
+        {
+            Venda NovaVenda = new Venda();
+            Console.WriteLine(((Cliente)cbxCliente.SelectedItem).Nome);
+            /*
+            NovaVenda.ClienteID = cbxCliente;
+            NovaVenda.VendedorID = cbxVendedor;
+            NovaVenda.MotoID = cbxMoto;
+
+            VendaController vc = new VendaController();
+            vc.SalvaVenda(NovaVenda);
+            MessageBox.Show("Venda realizada com sucesso!");
+            */
+        }
+
+        public void Limpar()
+        {
+            cbxCliente.Text = "";
+            cbxMoto.Text = "";
+            cbxVendedor.Text = "";
         }
     }
 }

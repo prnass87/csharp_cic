@@ -48,7 +48,7 @@
                     <Label Content="Valor:" HorizontalAlignment="Center" Margin="58,167,52,0" Foreground="White" Width="44" VerticalAlignment="Top" Height="26"/>
                     <TextBox x:Name="txtMotoValor" HorizontalAlignment="Center" Height="23" Margin="22,167,238,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Grid.Column="1"/>
                     <Label Content="Status:" HorizontalAlignment="Center" Margin="56,194,34,0" Foreground="White" Width="64" VerticalAlignment="Top" Height="26"/>
-                    <TextBox x:Name="txtMotoStatus" HorizontalAlignment="Center" Height="23" Margin="22,194,290,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Grid.Column="1"/>
+                    <TextBox x:Name="txtMotoStatus" HorizontalAlignment="Center" Height="23" Margin="22,194,238,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Grid.Column="1"/>
                     <Button x:Name="btnSalvar_Edicao" Content="Salvar" Grid.Column="1" HorizontalAlignment="Left" Margin="40,259,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="btnSalvar_Edicao_Click" Background="#FFA0CDCB" BorderBrush="#FFA0CDCB"/>
                     <Button x:Name="btnCancelar" Content="Cancelar" Grid.Column="1" HorizontalAlignment="Left" Margin="161,259,0,0" VerticalAlignment="Top" Width="75" Height="20" Background="#FFA0CDCB" BorderBrush="#FFA0CDCB" Click="btnCancelar_Click"/>
                 </Grid>
