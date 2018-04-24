@@ -16,14 +16,14 @@ namespace Models
 
         //Informações: MOTO
         public int MotoID { get; set; }
-        public Moto _Moto { get; set; }
+        public virtual Moto _Moto { get; set; }
 
         //Informações: VENDEDOR
         public int VendedorID { get; set; }
-        public Vendedor _Vendedor { get; set; }
+        public virtual Vendedor _Vendedor { get; set; }
 
         //Informações: CLIENTE
         public int ClienteID { get; set; }
-        public Cliente _Cliente { get; set; }
+        public virtual Cliente _Cliente { get; set; }
     }
 }
