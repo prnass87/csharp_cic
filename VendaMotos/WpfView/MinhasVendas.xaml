@@ -27,6 +27,7 @@
                             <DataGridTextColumn Header="VENDEDOR ID" Binding="{Binding Path=VendedorID}"/>
                             <DataGridTextColumn Header="VENDEDOR" Binding="{Binding Path=_Vendedor.Nome}"/>
                             <DataGridTextColumn Header="MODELO" Binding="{Binding Path=_Moto.Modelo}"/>
+                            <DataGridTextColumn Header="PLACA" Binding="{Binding Path=_Moto.Placa}"/>
                             <DataGridTextColumn Header="VALOR" Binding="{Binding Path=_Moto.Valor}"/>
                         </DataGrid.Columns>
                     </DataGrid>
