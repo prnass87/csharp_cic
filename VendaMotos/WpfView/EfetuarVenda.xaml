@@ -9,7 +9,7 @@
     <Grid>
         <Label Content="CLIENTE" HorizontalAlignment="Left" Margin="56,105,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="83" Height="25"/>
         <ComboBox x:Name="cbxCliente" DisplayMemberPath="Nome" SelectedValuePath="PessoaID" HorizontalAlignment="Left" Height="22" Margin="161,108,0,0" VerticalAlignment="Top" Width="337" Foreground="Black" OpacityMask="Black"/>
-        
+
         <Label Content="VENDEDOR:" HorizontalAlignment="Left" Margin="56,156,0,0" VerticalAlignment="Top" Foreground="White" OpacityMask="Black" Width="75" Height="26"/>
         <ComboBox x:Name="cbxVendedor" DisplayMemberPath="Nome" HorizontalAlignment="Left" Height="22" Margin="161,159,0,0" VerticalAlignment="Top" Width="337" Foreground="Black" OpacityMask="Black"/>
 

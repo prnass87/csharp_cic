@@ -21,8 +21,10 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="COD" Binding="{Binding VendaID}" />
                             <DataGridTextColumn Header="DATA" Binding="{Binding DataVenda}" />
+                            <DataGridTextColumn Header="CLIENTE ID" Binding="{Binding Path=ClienteID}"/>
                             <DataGridTextColumn Header="NOME CLIENTE" Binding="{Binding Path=_Cliente.Nome}"/>
-                            <DataGridTextColumn Header="CPF CLIENTE" Binding="{Binding Path=_Cliente.Cpf}"/>
+                            <DataGridTextColumn Header="CPF CLIENTE" Binding="{Binding Path=_Cliente.Venda.Cpf}"/>
+                            <DataGridTextColumn Header="VENDEDOR ID" Binding="{Binding Path=VendedorID}"/>
                             <DataGridTextColumn Header="VENDEDOR" Binding="{Binding Path=_Vendedor.Nome}"/>
                             <DataGridTextColumn Header="MODELO" Binding="{Binding Path=_Moto.Modelo}"/>
                             <DataGridTextColumn Header="VALOR" Binding="{Binding Path=_Moto.Valor}"/>

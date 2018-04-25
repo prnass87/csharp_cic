@@ -32,19 +32,21 @@ namespace WpfView
             try
             {
                 dtgMinhasVendas.ItemsSource = ctx.tblVendas.ToList();
+                
             }
             catch (Exception)
             {
-
+                    
             }
             lblQuantidadeVendas.Content = ctx.tblVendas.Count();
-
+            
         }
 
         private void btnNovaVenda_Click(object sender, RoutedEventArgs e)
         {
             EfetuarVenda nova_tela = new EfetuarVenda();
             nova_tela.Show();
+            
         }
 
         private void dtgMinhasVendas_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -64,7 +66,7 @@ namespace WpfView
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            BuscaCliente();
+            BuscaVenda();
         }
 
         //_____________________________________________
@@ -114,7 +116,7 @@ namespace WpfView
             }
         }
 
-        public void BuscaCliente()
+        public void BuscaVenda()
         {
             List<Venda> selecao = new List<Venda>();
 
